@@ -391,7 +391,7 @@ const ExperienceTimeline = ({ experiences }: { experiences: typeof TEMPLATE_DATA
           className={`inline-flex items-center text-sm font-medium text-[var(--accent)] hover:underline mt-4 group rounded-md p-1 -ml-1 ${FOCUS_RING}`}
         >
           <FileText className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-          Baixar Currículo Completo (PDF)
+          Ver Currículo Completo (PDF)
         </a>
       </div>
     </div>
