@@ -384,7 +384,7 @@ const ExperienceTimeline = ({ experiences }: { experiences: typeof TEMPLATE_DATA
         ))}
         
         <a 
-          href="/resume.pdf" 
+          href="https://drive.google.com/file/d/1hK_DniAyCw_JTab6-WVX9B8CQpWlZkTk/view?usp=sharing" 
           target="_blank" 
           rel="noopener noreferrer"
           aria-label="Baixar Currículo Completo em PDF (nova aba)"
@@ -517,7 +517,7 @@ const Contact = () => (
       
       <div className="flex flex-col sm:flex-row justify-center gap-6">
         <a 
-          href="mailto:pedro.campelo@exemplo.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=pedrocampelo.fgv@gmail.com"
           className={`flex items-center justify-center px-8 py-4 bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-[1.02] rounded-md w-full sm:w-auto min-w-[200px] ${TRANSITION_MICRO} ${FOCUS_RING}`}
         >
           <Mail className="w-5 h-5 mr-3" aria-hidden="true" />
@@ -525,7 +525,7 @@ const Contact = () => (
         </a>
         
         <a 
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/peedrocampelo/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visitar perfil no LinkedIn (nova aba)"
@@ -543,7 +543,7 @@ const Footer = ({ brandName }: { brandName: string }) => (
   <footer className="py-12 px-6 border-t border-[var(--border)] bg-[var(--bg)]">
     <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[var(--muted-2)]">
       <p>&copy; {new Date().getFullYear()} {brandName}. Todos os direitos reservados.</p>
-      <p className="mt-2 md:mt-0 font-mono text-xs opacity-70">Design System: Institutional Tokens v3.0</p>
+      <p className="mt-2 md:mt-0 font-mono text-xs opacity-70">Projetado & Construído por Pedro Campelo</p>
     </div>
   </footer>
 );
