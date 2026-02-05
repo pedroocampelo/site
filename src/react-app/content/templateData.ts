@@ -70,12 +70,5 @@ export const TEMPLATE_DATA = {
       onOpen: () => alert("Exemplo de ação modal"),
       metadata: { year: "2024", methods: "VAR/VEC", output: "Artigo de Termo" }
     },
-    {
-      title: "Entre o Campo e o Lar",
-      type: "Pesquisa",
-      description: "Análise dos impactos de secas severas sobre a alocação de tempo e desigualdades de gênero no mercado de trabalho rural brasileiro.",
-      link: "https://exemplo.com/paper",
-      metadata: { year: "2025", methods: "Diff-in-Diff", output: "Working Paper" }
-    },
   ],
 };
