@@ -34,9 +34,11 @@ export const TEMPLATE_DATA = {
       "Atuação em planejamento estratégico e governança em projeto do Vale da Inovação em Políticas Públicas.",
       "Gestão de projetos e liderança de equipe ao longo da trajetória na organização.",
       "Participação em avaliação institucional no Projeto 100 Melhores ONGs.",
-      "Prospecção comercial de leads no setor público."
-      ]
-    },
+       <>
+      Prospecção comercial de <em>leads</em> no setor público.
+    </>,
+  ],
+},
     {
       institution: "Diretório Acadêmico Getúlio Vargas (DAGV)",
       role: "Membro da Vice-Presidência Acadêmica de Economia",
