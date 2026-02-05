@@ -2,7 +2,7 @@ export const TEMPLATE_DATA = {
   menuItems: ['Home', 'Sobre', 'Experiência', 'Projetos', 'Contato'],
   hero: {
     name: "Pedro Campelo",
-    subtitle: "Economia, políticas públicas e análise aplicada.",
+    subtitle: "Análise aplicada, economia e políticas públicas.",
     intro: "Estudante de Economia na FGV-EESP, com atuação em pesquisa acadêmica e consultoria para o setor público.",
     focusAreas: ["Avaliação de Impacto", "Consultoria", "Microeconomia Aplicada"]
   },
