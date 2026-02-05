@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Mail, Linkedin, FileText, Menu, X, ExternalLink, Lock, Eye } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, Instagram, FileText, Menu, X, ExternalLink, Lock, Eye } from 'lucide-react';
 import { TEMPLATE_DATA } from '@/react-app/content/templateData';
 
 /**
@@ -536,7 +536,7 @@ const Contact = () => (
         </a>
         
         <a 
-          href="https://instagram.com"
+          href="https://instagram.com/peedrocampelo"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visitar perfil no Instagram (nova aba)"
