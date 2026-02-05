@@ -533,10 +533,10 @@ const Contact = () => (
         >
           <Linkedin className="w-5 h-5 mr-3 group-hover:fill-current" aria-hidden="true" />
           <span className="font-medium">LinkedIn</span>
-          </a>
+        </a>
         
         <a 
-          href="https://instagram.com/peedrocampelo"
+          href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visitar perfil no Instagram (nova aba)"
