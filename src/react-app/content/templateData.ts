@@ -3,16 +3,16 @@ export const TEMPLATE_DATA = {
   hero: {
     name: "Pedro Campelo",
     subtitle: "Economia, políticas públicas e análise aplicada.",
-    intro: "Estudante de Economia na FGV-EESP, com atuação em pesquisa acadêmica, consultoria para o setor público e projetos voltados à formulação de políticas baseadas em evidência.",
-    focusAreas: ["Microeconomia Aplicada", "Avaliação de Impacto", "Data Science"]
+    intro: "Estudante de Economia na FGV-EESP, com atuação em pesquisa acadêmica e consultoria para o setor público.",
+    focusAreas: ["Microeconomia Aplicada", "Avaliação de Impacto", "Consultoria"]
   },
   about: {
     paragraphs: [
       "Sou estudante de Economia na FGV-EESP, com interesse em microeconomia aplicada, políticas públicas e análise de dados voltada à tomada de decisão.",
-      "Minha trajetória combina pesquisa acadêmica, atuação em consultoria pública e envolvimento institucional, sempre com foco em estruturar problemas complexos de forma clara e operacional.",
+      "Minha trajetória combina pesquisa acadêmica, atuação em consultoria para o primeiro setor e envolvimento institucional, sempre com foco em estruturar problemas complexos de forma clara e operacional.",
       "Acredito em políticas públicas bem desenhadas, baseadas em evidência empírica e sensíveis às dimensões sociais e institucionais dos problemas."
     ],
-    pullQuote: "A clareza na formulação do problema é tão vital quanto o rigor na sua solução."
+    pullQuote: "A clareza na formulação do problema é tão importante quanto o rigor na sua solução."
   },
   experiences: [
     {
