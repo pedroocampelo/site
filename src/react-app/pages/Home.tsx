@@ -384,7 +384,7 @@ const ExperienceTimeline = ({ experiences }: { experiences: typeof TEMPLATE_DATA
         ))}
         
         <a 
-          href="https://drive.google.com/file/d/1hK_DniAyCw_JTab6-WVX9B8CQpWlZkTk/view?usp=sharing" 
+          href="https://drive.google.com/file/d/1yIaEujJh4ibGYHvIoU4K54mXM6A6UF30/view?usp=sharing" 
           target="_blank" 
           rel="noopener noreferrer"
           aria-label="Baixar Currículo Completo em PDF (nova aba)"
