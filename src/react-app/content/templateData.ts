@@ -39,12 +39,13 @@ export const TEMPLATE_DATA = {
     },
     {
       institution: "Diretório Acadêmico Getúlio Vargas (DAGV)",
-    role: "Membro da Vice-Presidência Acadêmica de Economia",
-    period: "Mar 2024– Ago 2025",
-    summary: "Atuação em governança estudantil e execução de projetos acadêmicos.",
-    highlights: [
-      "Participação em reuniões semanais de tomada de decisão.",
-      "Planejamento e execução de projetos acadêmicos e culturais para o alunato de Economia."
+      role: "Membro da Vice-Presidência Acadêmica de Economia",
+      period: "Mar 2024 – Ago 2025",
+      summary: "Atuação em governança estudantil e execução de projetos acadêmicos.",
+      highlights: [
+        "Participação em reuniões semanais de tomada de decisão.",
+        "Planejamento e execução de projetos acadêmicos e culturais para o alunato de Economia."
+      ]
     }
   ],
   projects: [
