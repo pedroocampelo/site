@@ -17,31 +17,34 @@ export const TEMPLATE_DATA = {
   experiences: [
     {
       institution: "FGV-EESP",
-      role: "Pesquisador de Iniciação Científica",
-      period: "2025–2026",
+      role: "Pesquisador Bolsista de Iniciação Científica",
+      period: "Jun 2025 – Jun 2026",
       summary: "Pesquisa sobre desigualdades de gênero e choques climáticos.",
       highlights: [
-        "Pesquisa sobre desigualdades de gênero e choques climáticos no mercado de trabalho rural brasileiro.",
-        "Análise econométrica utilizando microdados da PNAD Contínua e dados climáticos via satélite.",
-        "Automatização de rotinas de limpeza de dados em R e Stata."
+        "Pesquisa sobre desigualdades de gênero e choques climáticos no mercado de trabalho rural brasileiro."
       ]
     },
     {
-      institution: "Secretaria de Planejamento",
-      role: "Estagiário de Políticas Públicas",
-      period: "2024–2025",
-      summary: "Apoio na estruturação de indicadores de desempenho para programas estaduais.",
-      highlights: [
-        "Apoio na estruturação de indicadores de desempenho para programas estaduais de educação.",
-        "Elaboração de notas técnicas para avaliação de impacto preliminar."
+      institution: "Consultoria Júnior Pública – FGV (CJP-FGV)",
+    role: "Trainee → Consultor → Gerente",
+    period: "Set 2023– Dez 2025",
+    summary: "Consultoria para o setor público, com foco em planejamento estratégico e gestão de projetos.",
+    highlights: [
+      "Redesenho de processos e diagnóstico de disfunções organizacionais em entidade do terceiro setor.",
+      "Atuação em planejamento estratégico e governança em projeto do Vale da Inovação em Políticas Públicas.",
+      "Gestão de projetos e liderança de equipe ao longo da trajetória na organização.",
+      "Participação em avaliação institucional no Projeto 100 Melhores ONGs.",
+      "Prospecção comercial de leads no setor público."
       ]
     },
     {
-      institution: "Consultoria Econômica Jr.",
-      role: "Analista de Dados",
-      period: "2023–2024",
-      summary: "Modelagem de cenários macroeconômicos e relatórios setoriais.",
-      highlights: [] 
+      institution: "Diretório Acadêmico Getúlio Vargas (DAGV)",
+    role: "Membro da Vice-Presidência Acadêmica de Economia",
+    period: "Mar 2024– Ago 2025",
+    summary: "Atuação em governança estudantil e execução de projetos acadêmicos.",
+    highlights: [
+      "Participação em reuniões semanais de tomada de decisão.",
+      "Planejamento e execução de projetos acadêmicos e culturais para o alunato de Economia."
     }
   ],
   projects: [
