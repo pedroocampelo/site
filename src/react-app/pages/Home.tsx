@@ -525,26 +525,26 @@ const Contact = () => (
         </a>
         
         <a 
-          href="https://www.linkedin.com/in/peedrocampelo/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visitar perfil no LinkedIn (nova aba)"
-          className={`flex items-center justify-center px-8 py-4 bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-[1.02] rounded-md w-full sm:w-auto min-w-[200px] group ${TRANSITION_MICRO} ${FOCUS_RING}`}
-        >
-          <Linkedin className="w-5 h-5 mr-3 group-hover:fill-current" aria-hidden="true" />
-          <span className="font-medium">LinkedIn</span>
-        </a>
-        
-        <a 
-          href="https://instagram.com/peedrocampelo"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visitar perfil no Instagram (nova aba)"
-          className={`flex items-center justify-center px-8 py-4 bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-[1.02] rounded-md w-full sm:w-auto min-w-[200px] group ${TRANSITION_MICRO} ${FOCUS_RING}`}
-        >
-          <Instagram className="w-5 h-5 mr-3 group-hover:fill-current" aria-hidden="true" />
-          <span className="font-medium">Instagram</span>
-        </a>
+  href="https://www.linkedin.com/in/peedrocampelo/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visitar perfil no LinkedIn (nova aba)"
+  className={`flex items-center justify-center px-8 py-4 bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-[1.02] rounded-md w-full sm:w-auto min-w-[200px] ${TRANSITION_MICRO} ${FOCUS_RING}`}
+>
+  <Linkedin className="w-5 h-5 mr-3" aria-hidden="true" />
+  <span className="font-medium">LinkedIn</span>
+</a>
+
+<a 
+  href="https://instagram.com/peedrocampelo"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visitar perfil no Instagram (nova aba)"
+  className={`flex items-center justify-center px-8 py-4 bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-[1.02] rounded-md w-full sm:w-auto min-w-[200px] ${TRANSITION_MICRO} ${FOCUS_RING}`}
+>
+  <Instagram className="w-5 h-5 mr-3" aria-hidden="true" />
+  <span className="font-medium">Instagram</span>
+</a>
       </div>
     </div>
   </section>
