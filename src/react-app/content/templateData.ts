@@ -4,7 +4,7 @@ export const TEMPLATE_DATA = {
     name: "Pedro Campelo",
     subtitle: "Economia, políticas públicas e análise aplicada.",
     intro: "Estudante de Economia na FGV-EESP, com atuação em pesquisa acadêmica e consultoria para o setor público.",
-    focusAreas: ["Microeconomia Aplicada", "Avaliação de Impacto", "Consultoria"]
+    focusAreas: ["Avaliação de Impacto", "Consultoria", "Microeconomia Aplicada"]
   },
   about: {
     paragraphs: [
@@ -52,9 +52,9 @@ export const TEMPLATE_DATA = {
     {
       title: "Entre o Campo e o Lar",
       type: "Pesquisa",
-      description: "Análise dos impactos de secas severas sobre a alocação de tempo e desigualdades de gênero no mercado de trabalho rural brasileiro.",
-      link: "https://exemplo.com/paper",
-      metadata: { year: "2025", methods: "Diff-in-Diff", output: "Working Paper" }
+      description: "O projeto investiga se choques climáticos, especialmente as secas, impactam de maneira desigual os padrões de trabalho de homens e mulheres em zonas rurais brasileiras. O objetivo é identificar efeitos heterogêneos por sexo na alocação de trabalho, a fim de contribuir para a compreensão das desigualdades de gênero nas estratégias de adaptação a choques climáticos.",
+      link: null,
+      metadata: { year: "2025-2026", output: "Working Paper" }
     },
     {
       title: "Eficiência no Gasto Público",
