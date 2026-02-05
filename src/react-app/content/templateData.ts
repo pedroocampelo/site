@@ -52,23 +52,23 @@ export const TEMPLATE_DATA = {
     {
       title: "Entre o Campo e o Lar",
       type: "Pesquisa",
-      description: "O projeto investiga se choques climáticos, especialmente as secas, impactam de maneira desigual os padrões de trabalho de homens e mulheres em zonas rurais brasileiras. O objetivo é identificar efeitos heterogêneos por sexo na alocação de trabalho, a fim de contribuir para a compreensão das desigualdades de gênero nas estratégias de adaptação a choques climáticos.",
+      description: "O projeto investiga se choques climáticos, especialmente as secas, impactam de maneira desigual os padrões de trabalho de homens e mulheres em zonas rurais brasileiras. O objetivo é identificar efeitos heterogêneos por sexo na alocação de trabalhos.",
       link: null,
       metadata: { year: "2025-2026", output: "Working Paper" }
     },
     {
-      title: "Eficiência no Gasto Público",
-      type: "Policy Paper",
-      description: "Estudo comparativo sobre a eficiência da alocação de recursos em educação básica nos municípios do estado de São Paulo.",
+      title: "Transição Energética no Mercado de Trabalho",
+      type: "Pesquisa",
+      description: "Projeto de pesquisa sobre os impactos da transição energética sobre o mercado de trabalho com foco em gênero coordenado pela professora Priscilla Tavares.",
       link: null,
-      metadata: { year: "2024", methods: "DEA", output: "Relatório Técnico" }
+      metadata: { year: "2025", output: "Pesquisa" }
     },
     {
-      title: "Dinâmica da Inflação",
-      type: "Projeto Acadêmico",
-      description: "Aplicação de modelos de Vetores Autorregressivos (VAR) para entender a persistência inflacionária no setor de serviços pós-pandemia.",
-      onOpen: () => alert("Exemplo de ação modal"),
-      metadata: { year: "2024", methods: "VAR/VEC", output: "Artigo de Termo" }
+      title: "Redesenho de Processos",
+      type: "Projeto de Consultoria Júnior",
+      description: "Diagnóstico organizacional e redesenho de processos internos, com propostas práticas para aumentar eficiência, engajamento dos membros e impacto organizacional.",
+      link: null,
+      metadata: { year: "2024", output: "Relatório" }
     },
   ],
 };
