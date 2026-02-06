@@ -489,7 +489,7 @@ return (
         {isNDA ? (
           <Lock size={14} className="text-[var(--border)]" aria-hidden="true" />
         ) : (
-          <Loader2 size={14} className="text-[var(--border)] animate-spin" aria-hidden="true" />
+          <Loader2 size={14} className="text-[var(--border)]" aria-hidden="true" />
         )}
       </div>
 
@@ -502,7 +502,7 @@ return (
       {isNDA ? (
         <Lock size={14} className="text-[var(--muted-2)]" aria-hidden="true" />
       ) : (
-        <Loader2 size={14} className="text-[var(--muted-2)] animate-spin" aria-hidden="true" />
+        <Loader2 size={14} className="text-[var(--muted-2)]" aria-hidden="true" />
       )}
       <span className="text-xs font-medium uppercase tracking-wide">{statusText}</span>
     </div>
