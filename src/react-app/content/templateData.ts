@@ -24,7 +24,7 @@ export const TEMPLATE_DATA = {
         "Pesquisa sobre desigualdades de gênero e choques climáticos no mercado de trabalho rural brasileiro."
         {
     text: "Pesquisa orientada pela Profª Danyelle Branco.",
-    linkText: "Danyelle Branco",
+    linkText: "Profª Danyelle Branco.",
     href: "https://eesp.fgv.br/integrante/danyelle-branco"
   }
       ]
@@ -38,7 +38,7 @@ export const TEMPLATE_DATA = {
   "Responsável pela revisão bibliográfica do projeto.",
   {
     text: "Pesquisa coordenada pela Profª Priscilla Tavares.",
-    linkText: "Priscilla Tavares",
+    linkText: "Profª Priscilla Tavares.",
     href: "https://eesp.fgv.br/integrante/priscilla-albuquerque-tavares"
   }
 ]
