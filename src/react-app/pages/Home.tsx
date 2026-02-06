@@ -372,8 +372,25 @@ const ExperienceTimeline = ({ experiences }: { experiences: typeof TEMPLATE_DATA
             {exp.highlights && exp.highlights.length > 0 ? (
               <ul className="list-disc ml-4 space-y-2 text-[var(--muted)] text-base leading-relaxed max-w-[65ch]">
                 {exp.highlights.map((item, idx) => (
-                  <li key={idx} className="pl-1">{item}</li>
-                ))}
+  <li key={idx} className="pl-1">
+    {typeof item === "string" ? (
+      item
+    ) : (
+      <>
+        {item.text.split(item.linkText)[0]}
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:text-[var(--accent)]"
+        >
+          {item.linkText}
+        </a>
+        {item.text.split(item.linkText)[1]}
+      </>
+    )}
+  </li>
+))}
               </ul>
             ) : (
               <p className="text-[var(--muted)] leading-relaxed text-base max-w-[65ch]">
