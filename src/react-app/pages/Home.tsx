@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Mail, Linkedin, Instagram, FileText, Menu, X, ExternalLink, Lock, Eye } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, FileText, Menu, X, ExternalLink, Lock, Eye, Loader2 } from 'lucide-react';
 import { TEMPLATE_DATA } from '@/react-app/content/templateData';
 
 /**
@@ -473,24 +473,41 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </button>
     );
   }
+  
+const isNDA = project.status === "nda";
+const statusText = isNDA ? "Projeto sob NDA" : "Em breve";
 
-  return (
-    <article className={`${commonClasses}`}>
-      <div>
-        <div className="flex justify-between items-start mb-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted-2)] block">{project.type}</span>
+return (
+  <article className={`${commonClasses}`}>
+    <div>
+      <div className="flex justify-between items-start mb-3">
+        <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted-2)] block">
+          {project.type}
+        </span>
+
+        {isNDA ? (
           <Lock size={14} className="text-[var(--border)]" aria-hidden="true" />
-        </div>
-        <h4 className="text-lg font-semibold text-[var(--text)] mb-4">{project.title}</h4>
-        {renderMetadata()}
-        <p className="text-sm text-[var(--muted)] leading-relaxed mb-6">{project.description}</p>
+        ) : (
+          <Loader2 size={14} className="text-[var(--border)] animate-spin" aria-hidden="true" />
+        )}
       </div>
-      <div className="flex items-center text-[var(--muted-2)] select-none">
-        <span className="text-xs font-medium uppercase tracking-wide">Em breve / Confidencial</span>
-      </div>
-    </article>
-  );
-};
+
+      <h4 className="text-lg font-semibold text-[var(--text)] mb-4">{project.title}</h4>
+      {renderMetadata()}
+      <p className="text-sm text-[var(--muted)] leading-relaxed mb-6">{project.description}</p>
+    </div>
+
+    <div className="flex items-center gap-2 text-[var(--muted-2)] select-none">
+      {isNDA ? (
+        <Lock size={14} className="text-[var(--muted-2)]" aria-hidden="true" />
+      ) : (
+        <Loader2 size={14} className="text-[var(--muted-2)] animate-spin" aria-hidden="true" />
+      )}
+      <span className="text-xs font-medium uppercase tracking-wide">{statusText}</span>
+    </div>
+  </article>
+);
+
 
 const ProjectsGrid = ({ projects }: { projects: typeof TEMPLATE_DATA.projects }) => (
   <section id="projetos" className="py-24 px-6 bg-[var(--bg)] scroll-mt-[var(--nav-h)]">
