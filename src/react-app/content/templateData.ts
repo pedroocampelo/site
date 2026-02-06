@@ -32,7 +32,7 @@ export const TEMPLATE_DATA = {
     highlights: [
       "Redesenho de processos e diagnóstico de disfunções organizacionais em entidade do terceiro setor.",
       "Atuação em planejamento estratégico e governança em projeto do Vale da Inovação em Políticas Públicas.",
-      "Gestão de projetos e liderança de equipe ao longo da trajetória na organização.",
+      "Gestão de projetos e liderança de equipe durante o ciclo de trainee.",
       "Participação em avaliação institucional no Projeto 100 Melhores ONGs.",
       "Prospecção comercial de leads no setor público.",
       ],
