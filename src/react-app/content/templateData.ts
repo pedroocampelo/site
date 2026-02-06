@@ -52,6 +52,11 @@ export const TEMPLATE_DATA = {
       "Redesenho de processos e diagnóstico de disfunções organizacionais em entidade do terceiro setor.",
       "Atuação em planejamento estratégico e governança em projeto do Vale da Inovação em Políticas Públicas.",
       "Gestão de projetos e liderança de equipe durante o ciclo de trainee.",
+      {
+    text: "Participação na banca avaliadora do Projeto 100 Melhores ONGs.",
+    linkText: "Projeto 100 Melhores ONGs.",
+    href: "https://premiomelhores.org/home",
+  },
       "Participação em avaliação institucional no Projeto 100 Melhores ONGs.",
       "Prospecção comercial de leads no setor público.",
       ],
