@@ -22,6 +22,11 @@ export const TEMPLATE_DATA = {
       summary: "Pesquisa sobre desigualdades de gênero e choques climáticos.",
       highlights: [
         "Pesquisa sobre desigualdades de gênero e choques climáticos no mercado de trabalho rural brasileiro."
+        {
+    text: "Pesquisa orientada pela Profª Danyelle Branco.",
+    linkText: "Danyelle Branco",
+    href: "https://eesp.fgv.br/integrante/danyelle-branco"
+  }
       ]
     },
     {
