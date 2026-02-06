@@ -25,9 +25,23 @@ export const TEMPLATE_DATA = {
       ]
     },
     {
+      institution: "FGV-EESP",
+      role: "Assistente de Pesquisa",
+      period: "Set 2025 – Out 2025",
+      summary: "Projeto de pesquisa sobre os impactos da transição energética sobre o mercado de trabalho com foco em gênero",
+      highlights: [
+  "Responsável pela revisão bibliográfica do projeto.",
+  {
+    text: "Pesquisa coordenada pela Profª Priscilla Tavares.",
+    linkText: "Priscilla Tavares",
+    href: "https://eesp.fgv.br/integrante/priscilla-albuquerque-tavares"
+  }
+]
+    },
+    {
       institution: "Consultoria Júnior Pública – FGV (CJP-FGV)",
     role: "Trainee → Consultor → Gerente",
-    period: "Set 2023– Dez 2025",
+    period: "Set 2024 – Dez 2025",
     summary: "Consultoria para o setor público, com foco em planejamento estratégico e gestão de projetos.",
     highlights: [
       "Redesenho de processos e diagnóstico de disfunções organizacionais em entidade do terceiro setor.",
@@ -60,7 +74,7 @@ export const TEMPLATE_DATA = {
     {
       title: "Transição Energética no Mercado de Trabalho",
       type: "Pesquisa",
-      description: "Projeto de pesquisa sobre os impactos da transição energética sobre o mercado de trabalho com foco em gênero coordenado pela professora Priscilla Tavares.",
+      description: "Projeto de pesquisa sobre os impactos da transição energética sobre o mercado de trabalho com foco em gênero.",
       link: null,
       status: "soon",
       metadata: { year: "2025", output: "Pesquisa" }
