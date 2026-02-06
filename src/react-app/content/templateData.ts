@@ -21,13 +21,13 @@ export const TEMPLATE_DATA = {
       period: "Jun 2025 – Jun 2026",
       summary: "Pesquisa sobre desigualdades de gênero e choques climáticos.",
       highlights: [
-        "Pesquisa sobre desigualdades de gênero e choques climáticos no mercado de trabalho rural brasileiro."
+        "Pesquisa sobre desigualdades de gênero e choques climáticos no mercado de trabalho rural brasileiro.",
         {
     text: "Pesquisa orientada pela Profª Danyelle Branco.",
     linkText: "Profª Danyelle Branco.",
-    href: "https://eesp.fgv.br/integrante/danyelle-branco"
-  }
-      ]
+    href: "https://eesp.fgv.br/integrante/danyelle-branco",
+  },
+      ],
     },
     {
       institution: "FGV-EESP",
@@ -39,9 +39,9 @@ export const TEMPLATE_DATA = {
   {
     text: "Pesquisa coordenada pela Profª Priscilla Tavares.",
     linkText: "Profª Priscilla Tavares.",
-    href: "https://eesp.fgv.br/integrante/priscilla-albuquerque-tavares"
-  }
-]
+    href: "https://eesp.fgv.br/integrante/priscilla-albuquerque-tavares",
+  },
+],
     },
     {
       institution: "Consultoria Júnior Pública – FGV (CJP-FGV)",
