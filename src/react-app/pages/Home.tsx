@@ -589,7 +589,7 @@ const Footer = ({ brandName }: { brandName: string }) => (
   <footer className="py-12 px-6 border-t border-[var(--border)] bg-[var(--bg)]">
     <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[var(--muted-2)]">
       <p>&copy; {new Date().getFullYear()} {brandName}. Todos os direitos reservados.</p>
-      <p className="mt-2 md:mt-0 font-mono text-xs opacity-70">Projetado & Construído por Pedro Campelo</p>
+      <p className="mt-2 md:mt-0 font-mono text-xs opacity-70">Powered by Mocha AI</p>
     </div>
   </footer>
 );
