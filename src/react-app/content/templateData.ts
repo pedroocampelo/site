@@ -54,6 +54,7 @@ export const TEMPLATE_DATA = {
       type: "Pesquisa",
       description: "O projeto investiga se choques climáticos, especialmente as secas, impactam de maneira desigual os padrões de trabalho de homens e mulheres em zonas rurais brasileiras. O objetivo é identificar efeitos heterogêneos por sexo na alocação de trabalhos.",
       link: null,
+      status: soon,
       metadata: { year: "2025-2026", output: "Working Paper" }
     },
     {
@@ -61,6 +62,7 @@ export const TEMPLATE_DATA = {
       type: "Pesquisa",
       description: "Projeto de pesquisa sobre os impactos da transição energética sobre o mercado de trabalho com foco em gênero coordenado pela professora Priscilla Tavares.",
       link: null,
+      status: soon,
       metadata: { year: "2025", output: "Pesquisa" }
     },
     {
@@ -68,6 +70,7 @@ export const TEMPLATE_DATA = {
       type: "Projeto de Consultoria Júnior",
       description: "Diagnóstico organizacional e redesenho de processos internos, com propostas práticas para aumentar eficiência, engajamento dos membros e impacto organizacional.",
       link: null,
+      status: nda,
       metadata: { year: "2024", output: "Relatório" }
     },
   ],
