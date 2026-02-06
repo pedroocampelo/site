@@ -404,6 +404,7 @@ interface Project {
   description: string;
   link?: string | null;
   onOpen?: () => void;
+  status?: "soon" | "nda";
   metadata?: {
     year?: string;
     methods?: string;
@@ -507,7 +508,7 @@ return (
     </div>
   </article>
 );
-
+};
 
 const ProjectsGrid = ({ projects }: { projects: typeof TEMPLATE_DATA.projects }) => (
   <section id="projetos" className="py-24 px-6 bg-[var(--bg)] scroll-mt-[var(--nav-h)]">
