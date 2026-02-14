@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Mail, Linkedin, Instagram, FileText, Menu, X, ExternalLink, Lock, Eye, Loader2 } from 'lucide-react';
-import aboutPhoto from '@/react-app/assets/about.jpg';
+import aboutPhoto from '@/react-app/assets/about.JPG';
 import { TEMPLATE_DATA } from '@/react-app/content/templateData';
 
 /**
