@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Mail, Linkedin, Instagram, FileText, Menu, X, ExternalLink, Lock, Eye, Loader2 } from 'lucide-react';
+import aboutPhoto from '@/react-app/assets/about.jpg';
 import { TEMPLATE_DATA } from '@/react-app/content/templateData';
 
 /**
@@ -334,8 +335,13 @@ const About = ({ data }: { data: typeof TEMPLATE_DATA.about }) => (
   <section id="sobre" className="py-24 px-6 scroll-mt-[var(--nav-h)]">
     <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
       <div className="md:col-span-4">
-        <SectionHeading>Sobre</SectionHeading>
-      </div>
+  <SectionHeading>Sobre</SectionHeading>
+  <img
+    src={aboutPhoto}
+    alt="Foto de Pedro Campelo"
+    className="hidden md:block mt-8 w-full max-w-[260px] rounded-2xl object-cover border border-[var(--border)] shadow-sm"
+  />
+</div>
       <div className="md:col-span-8 space-y-8 text-lg text-[var(--text)] leading-relaxed">
         {data.paragraphs.map((paragraph, idx) => (
           <p key={idx} className="max-w-[65ch]">{paragraph}</p>
