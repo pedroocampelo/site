@@ -334,19 +334,35 @@ const Hero = ({ onNavigate, data }: HeroProps) => (
 const About = ({ data }: { data: typeof TEMPLATE_DATA.about }) => (
   <section id="sobre" className="py-24 px-6 scroll-mt-[var(--nav-h)]">
     <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+      
+      {/* COLUNA ESQUERDA */}
       <div className="md:col-span-4">
-  <SectionHeading>Sobre</SectionHeading>
-  <img
-    src={aboutPhoto}
-    alt="Foto de Pedro Campelo"
-    className="hidden md:block mt-8 w-full max-w-[260px] rounded-2xl object-cover border border-[var(--border)] shadow-sm"
-  />
-</div>
+        <SectionHeading>Sobre</SectionHeading>
+
+        {/* Foto para DESKTOP */}
+        <img
+          src={aboutPhoto}
+          alt="Foto de Pedro Campelo"
+          className="hidden md:block mt-8 w-full max-w-[260px] rounded-2xl object-cover border border-[var(--border)] shadow-sm"
+        />
+      </div>
+
+      {/* COLUNA DIREITA */}
       <div className="md:col-span-8 space-y-8 text-lg text-[var(--text)] leading-relaxed">
+
+        {/* Foto para MOBILE */}
+        <img
+          src={aboutPhoto}
+          alt="Foto de Pedro Campelo"
+          className="md:hidden mb-6 w-full max-w-[320px] rounded-2xl object-cover border border-[var(--border)] shadow-sm"
+        />
+
         {data.paragraphs.map((paragraph, idx) => (
-          <p key={idx} className="max-w-[65ch]">{paragraph}</p>
+          <p key={idx} className="max-w-[65ch]">
+            {paragraph}
+          </p>
         ))}
-        
+
         {data.pullQuote && (
           <div className="my-10 pl-6 border-l-2 border-[var(--accent)]">
             <p className="text-[var(--text)] text-xl font-normal max-w-[55ch] leading-relaxed italic">
@@ -354,7 +370,9 @@ const About = ({ data }: { data: typeof TEMPLATE_DATA.about }) => (
             </p>
           </div>
         )}
+
       </div>
+
     </div>
   </section>
 );
