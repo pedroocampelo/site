@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio | Pedro Campelo</title>
+  <meta name="description" content="Análise aplicada, economia e políticas públicas." />
+  <meta property="og:title" content="Portfólio | Pedro Campelo" />
+  <meta property="og:description" content="Análise aplicada, economia e políticas públicas." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfólio | Pedro Campelo" />
+  <meta name="twitter:description" content="Análise aplicada, economia e políticas públicas." />
+  <link rel="icon" type="image/png" href="pclogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <script>
+    // Inline before render — prevents flash of wrong theme/language
+    (function() {
+      try {
+        const saved = localStorage.getItem('pc-theme');
+        document.documentElement.setAttribute('data-theme', saved || 'dark');
+        const lang = localStorage.getItem('pc-lang') || 'en';
+        document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
+      } catch (err) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('lang', 'en');
+      }
+    })();
+  </script>
+
+  <style>
+    /* ─── TOKENS ──────────────────────────────────────────────────── */
+    :root {
+      --apple-blue:       #0071e3;
+      --apple-blue-dark:  #2997ff;
+      --apple-blue-hover: #0077ed;
+      --link-light:       #0066cc;
+      --link-dark:        #2997ff;
+
+      --bg-hero:         #000000;
+      --bg-neutral:      #f5f5f7;
+      --bg-neutral-dark: #111111;
+      --bg-card:         #ffffff;
+      --bg-card-dark:    #1d1d1f;
+      --bg-footer:       #1d1d1f;
+
+      --text-primary:    #1d1d1f;
+      --text-secondary:  rgba(0,0,0,0.64);
+      --text-tertiary:   rgba(0,0,0,0.4);
+
+      --text-on-dark:    #ffffff;
+      --text-sec-dark:   rgba(255,255,255,0.72);
+      --text-ter-dark:   rgba(255,255,255,0.44);
+
+      --border-light:    rgba(0,0,0,0.08);
+      --border-dark:     rgba(255,255,255,0.1);
+
+      --shadow-card:     rgba(0,0,0,0.22) 3px 5px 30px 0px;
+      --shadow-card-hover: rgba(0,0,0,0.32) 3px 10px 40px 0px;
+
+      --nav-bg:          rgba(0,0,0,0.72);
+      --nav-height:      48px;
+
+      --radius-sm:   5px;
+      --radius-md:   8px;
+      --radius-lg:   12px;
+      --radius-pill: 980px;
+
+      --font-serif: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+      --font-sans:  system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      --font-mono:  'SF Mono', 'JetBrains Mono', 'Fira Code', monospace;
+
+      --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-standard:  cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Neutral section tokens — change with theme */
+      --section-neutral-bg:   #f5f5f7;
+      --section-neutral-text: #1d1d1f;
+      --card-bg:              #ffffff;
+      --card-border:          rgba(0,0,0,0.08);
+      --text-body:            #1d1d1f;
+      --text-muted:           rgba(0,0,0,0.6);
+    }
+
+    [data-theme="dark"] {
+      --section-neutral-bg:   #111111;
+      --section-neutral-text: #f5f5f7;
+      --card-bg:              #1d1d1f;
+      --card-border:          rgba(255,255,255,0.08);
+      --text-body:            #f5f5f7;
+      --text-muted:           rgba(255,255,255,0.56);
+    }
+
+    /* ─── RESET ───────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-hero);
+      color: var(--text-on-dark);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* ─── TYPOGRAPHY BASE ─────────────────────────────────────────── */
+    .serif { font-family: var(--font-serif); }
+
+    /* ─── THEME TRANSITIONS ───────────────────────────────────────── */
+    .theme-transition,
+    .theme-transition *,
+    .theme-transition *::before,
+    .theme-transition *::after {
+      transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease !important;
+    }
+
+    /* ─── SCROLL REVEAL ───────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 650ms var(--ease-out-quint),
+                  transform 650ms var(--ease-out-quint);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; }
+      .reveal.visible { transition: none; }
+      html { scroll-behavior: auto; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ─── NAVIGATION ──────────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      background: var(--nav-bg);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0 22px;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.01em;
+      opacity: 0.9;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: -0.01em;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 200ms ease;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0;
+      width: 0; height: 1px;
+      background: #fff;
+      transition: width 300ms var(--ease-standard);
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: #fff; }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      color: rgba(255,255,255,0.8);
+      transition: color 200ms ease, background 200ms ease;
+      min-width: 44px;
+      min-height: 44px;
+    }
+    .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-btn svg { pointer-events: none; }
+
+    #lang-btn {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0 8px;
+    }
+
+    /* Hamburger */
+    #hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      transition: background 200ms ease;
+    }
+    #hamburger:hover { background: rgba(255,255,255,0.08); }
+    #hamburger span {
+      display: block;
+      height: 1.5px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 2px;
+      transition: transform 300ms var(--ease-standard), opacity 300ms ease;
+    }
+    #hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    #hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    #hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      right: 0; bottom: 0;
+      width: min(280px, 85vw);
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      z-index: 999;
+      transform: translateX(100%);
+      transition: transform 300ms var(--ease-standard);
+      padding: 32px 28px;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+    #mobile-menu.open { transform: translateX(0); }
+    .mobile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      list-style: none;
+    }
+    .mobile-links a {
+      display: block;
+      font-size: 17px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      letter-spacing: -0.02em;
+      transition: color 200ms ease;
+    }
+    .mobile-links a:hover,
+    .mobile-links a.active { color: #fff; }
+    #mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+    #mobile-overlay.open { opacity: 1; }
+
+    /* ─── SECTIONS BASE ───────────────────────────────────────────── */
+    section { width: 100%; }
+    .section-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* ─── HOME / HERO ─────────────────────────────────────────────── */
+    #home {
+      background: var(--bg-hero);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-height) + 40px) 22px 80px;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-ter-dark);
+      margin-bottom: 20px;
+    }
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 7vw, 68px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero-subtitle {
+      font-size: clamp(17px, 2.5vw, 21px);
+      font-weight: 400;
+      line-height: 1.47;
+      letter-spacing: -0.022em;
+      color: var(--text-sec-dark);
+      max-width: 540px;
+      margin: 0 auto 14px;
+    }
+    .hero-description {
+      font-size: 15px;
+      color: var(--text-ter-dark);
+      max-width: 460px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius-pill);
+      padding: 5px 14px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .btn-primary {
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: -0.022em;
+      color: #fff;
+      background: var(--apple-blue);
+      border: 1px solid transparent;
+      border-radius: var(--radius-md);
+      padding: 8px 20px;
+      transition: background 200ms ease, transform 150ms ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary:hover { background: var(--apple-blue-hover); }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-outline {
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: -0.022em;
+      color: rgba(255,255,255,0.9);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.36);
+      border-radius: var(--radius-md);
+      padding: 8px 20px;
+      transition: border-color 200ms ease, color 200ms ease, transform 150ms ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+    .btn-outline:active { transform: scale(0.98); }
+
+    /* Scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.4;
+      animation: bounce 2s ease-in-out infinite;
+      transition: opacity 300ms ease;
+    }
+    .scroll-hint.hidden { opacity: 0; pointer-events: none; }
+    .scroll-hint span {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .scroll-hint svg { color: #fff; }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(5px); }
+    }
+
+    /* ─── ABOUT ───────────────────────────────────────────────────── */
+    #sobre {
+      background: var(--section-neutral-bg);
+      color: var(--section-neutral-text);
+      padding: 100px 0;
+      transition: background 250ms ease, color 250ms ease;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: start;
+    }
+    .about-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--apple-blue);
+      margin-bottom: 20px;
+    }
+    .about-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--text-body);
+      margin-bottom: 28px;
+    }
+    .about-text {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: -0.022em;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .about-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(18px, 2.5vw, 22px);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      color: var(--text-body);
+      border-left: 2px solid var(--apple-blue);
+      padding: 6px 0 6px 20px;
+      margin-top: 32px;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-wrap img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: var(--radius-lg);
+    }
+    [data-theme="dark"] .about-photo-wrap img {
+      filter: saturate(0.88) brightness(0.94);
+    }
+
+    /* ─── EXPERIENCE ──────────────────────────────────────────────── */
+    #experiencia {
+      background: var(--bg-hero);
+      padding: 100px 0;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--apple-blue);
+      margin-bottom: 16px;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 60px;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -34px;
+      top: 18px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--apple-blue);
+      border: 2px solid var(--bg-hero);
+    }
+    .timeline-card {
+      background: var(--bg-card-dark);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      transition: transform 200ms ease;
+    }
+    .timeline-card:hover { transform: translateY(-2px); }
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .timeline-period {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-ter-dark);
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius-pill);
+      padding: 3px 10px;
+    }
+    .timeline-badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #5ac8fa;
+      background: rgba(90,200,250,0.1);
+      border-radius: var(--radius-pill);
+      padding: 3px 10px;
+    }
+    .timeline-org {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 4px;
+    }
+    .timeline-title {
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: -0.022em;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .timeline-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      color: var(--text-sec-dark);
+      margin-bottom: 12px;
+    }
+    .timeline-link {
+      font-size: 13px;
+      color: var(--link-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: -0.01em;
+      transition: opacity 200ms ease;
+    }
+    .timeline-link:hover { opacity: 0.72; text-decoration: underline; }
+
+    .exp-footer {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .btn-cv {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: var(--radius-pill);
+      padding: 10px 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 200ms ease, color 200ms ease, transform 150ms ease;
+    }
+    .btn-cv:hover {
+      border-color: var(--apple-blue);
+      color: var(--apple-blue-dark);
+    }
+    .btn-cv:active { transform: scale(0.98); }
+
+    /* ─── PROJECTS ────────────────────────────────────────────────── */
+    #projetos {
+      background: var(--section-neutral-bg);
+      color: var(--section-neutral-text);
+      padding: 100px 0;
+      transition: background 250ms ease, color 250ms ease;
+    }
+    #projetos .section-heading {
+      color: var(--text-body);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .project-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .project-type-badge {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: var(--radius-pill);
+      padding: 3px 10px;
+    }
+    .badge-research {
+      color: #ffffff;
+      background: var(--apple-blue);
+    }
+    [data-theme="dark"] .badge-research {
+      color: #ffffff;
+      background: var(--apple-blue);
+    }
+    .badge-consulting {
+      color: #ffffff;
+      background: #be4400;
+    }
+    [data-theme="dark"] .badge-consulting {
+      color: #ffffff;
+      background: #be4400;
+    }
+    .project-year {
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--text-body);
+      margin-bottom: 10px;
+    }
+    .project-meta-line {
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .project-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      color: var(--text-muted);
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .project-status {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      align-self: flex-start;
+    }
+    .status-soon {
+      color: #ffffff;
+      background: var(--apple-blue);
+    }
+    [data-theme="dark"] .status-soon {
+      color: #ffffff;
+      background: var(--apple-blue);
+    }
+    .status-nda {
+      color: #ffffff;
+      background: #be4400;
+    }
+    [data-theme="dark"] .status-nda {
+      color: #ffffff;
+      background: #be4400;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .project-link {
+      font-size: 13px;
+      letter-spacing: -0.01em;
+      color: var(--link-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 200ms ease;
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .project-link {
+      color: var(--link-dark);
+    }
+    .project-link:hover {
+      opacity: 0.72;
+      text-decoration: underline;
+    }
+    .project-link.is-hidden {
+      display: none;
+    }
+
+    /* ─── CONTACT ─────────────────────────────────────────────────── */
+    #contato {
+      background: var(--bg-hero);
+      padding: 120px 0 100px;
+      text-align: center;
+    }
+    .contact-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.07;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .contact-sub {
+      font-size: 17px;
+      line-height: 1.47;
+      letter-spacing: -0.022em;
+      color: var(--text-sec-dark);
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+    .contact-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .contact-btn {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      border-radius: var(--radius-md);
+      padding: 10px 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 200ms ease, border-color 200ms ease, color 200ms ease, transform 150ms ease;
+      cursor: pointer;
+    }
+    .contact-btn:active { transform: scale(0.98); }
+    .contact-btn-email {
+      background: var(--apple-blue);
+      color: #fff;
+      border: 1px solid transparent;
+    }
+    .contact-btn-email:hover { background: var(--apple-blue-hover); }
+    .contact-btn-secondary {
+      background: transparent;
+      color: rgba(255,255,255,0.84);
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+    .contact-btn-secondary:hover {
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────────────── */
+    footer {
+      background: var(--bg-footer);
+      padding: 28px 22px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .footer-text {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.36);
+      line-height: 1.8;
+    }
+
+    /* ─── BACK TO TOP ─────────────────────────────────────────────── */
+    #back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      width: 44px; height: 44px;
+      background: var(--apple-blue);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 500;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 300ms ease, transform 300ms ease;
+      pointer-events: none;
+      cursor: pointer;
+      border: none;
+    }
+    #back-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #back-top:hover { background: var(--apple-blue-hover); }
+
+
+    /* ─── LIGHT THEME OVERRIDES ───────────────────────────────────── */
+    [data-theme="light"] body {
+      background: #f5f5f7;
+      color: #1d1d1f;
+    }
+    [data-theme="light"] #nav {
+      background: rgba(255,255,255,0.78);
+    }
+    [data-theme="light"] .nav-logo {
+      color: #1d1d1f;
+      opacity: 1;
+    }
+    [data-theme="light"] .nav-links a {
+      color: rgba(29,29,31,0.78);
+    }
+    [data-theme="light"] .nav-links a::after {
+      background: #1d1d1f;
+    }
+    [data-theme="light"] .nav-links a:hover,
+    [data-theme="light"] .nav-links a.active {
+      color: #1d1d1f;
+    }
+    [data-theme="light"] .nav-btn {
+      color: rgba(29,29,31,0.82);
+    }
+    [data-theme="light"] .nav-btn:hover,
+    [data-theme="light"] #hamburger:hover {
+      color: #1d1d1f;
+      background: rgba(0,0,0,0.06);
+    }
+    [data-theme="light"] #hamburger span {
+      background: rgba(29,29,31,0.9);
+    }
+    [data-theme="light"] #mobile-menu {
+      background: rgba(255,255,255,0.96);
+      border-left: 1px solid rgba(0,0,0,0.08);
+    }
+    [data-theme="light"] .mobile-links a {
+      color: rgba(29,29,31,0.82);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    [data-theme="light"] .mobile-links a:hover,
+    [data-theme="light"] .mobile-links a.active {
+      color: #1d1d1f;
+    }
+    [data-theme="light"] #mobile-overlay {
+      background: rgba(0,0,0,0.25);
+    }
+    [data-theme="light"] #home {
+      background: #ffffff;
+    }
+    [data-theme="light"] .hero-name {
+      color: #1d1d1f;
+    }
+    [data-theme="light"] .hero-subtitle {
+      color: rgba(0,0,0,0.72);
+    }
+    [data-theme="light"] .hero-description {
+      color: rgba(0,0,0,0.56);
+    }
+    [data-theme="light"] .hero-tag {
+      color: rgba(0,0,0,0.58);
+      border-color: rgba(0,0,0,0.16);
+    }
+    [data-theme="light"] .btn-outline {
+      color: #1d1d1f;
+      border-color: rgba(0,0,0,0.24);
+    }
+    [data-theme="light"] .btn-outline:hover {
+      color: #1d1d1f;
+      border-color: rgba(0,0,0,0.42);
+    }
+    [data-theme="light"] .scroll-hint span,
+    [data-theme="light"] .scroll-hint svg {
+      color: #1d1d1f;
+    }
+    [data-theme="light"] #experiencia {
+      background: #ffffff;
+      color: #1d1d1f;
+    }
+    [data-theme="light"] #experiencia .section-heading {
+      color: #1d1d1f;
+    }
+    [data-theme="light"] .timeline::before {
+      background: rgba(0,0,0,0.12);
+    }
+    [data-theme="light"] .timeline-dot {
+      border-color: #ffffff;
+    }
+    [data-theme="light"] .timeline-card {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    [data-theme="light"] .timeline-period {
+      color: rgba(0,0,0,0.56);
+      background: rgba(0,0,0,0.05);
+    }
+    [data-theme="light"] .timeline-badge {
+      color: #0071e3;
+      background: rgba(0,113,227,0.08);
+    }
+    [data-theme="light"] .timeline-org {
+      color: rgba(0,0,0,0.55);
+    }
+    [data-theme="light"] .timeline-title {
+      color: #1d1d1f;
+    }
+    [data-theme="light"] .timeline-desc {
+      color: rgba(0,0,0,0.72);
+    }
+    [data-theme="light"] .timeline-link {
+      color: var(--link-light);
+    }
+    [data-theme="light"] .exp-footer {
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    [data-theme="light"] .btn-cv {
+      color: #1d1d1f;
+      border-color: rgba(0,0,0,0.18);
+    }
+    [data-theme="light"] .btn-cv:hover {
+      color: var(--apple-blue);
+      border-color: var(--apple-blue);
+    }
+    [data-theme="light"] #projetos .project-card {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    [data-theme="light"] #projetos .project-card:hover {
+      box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+    }
+    [data-theme="light"] #contato {
+      background: #ffffff;
+    }
+    [data-theme="light"] .contact-heading {
+      color: #1d1d1f;
+    }
+    [data-theme="light"] .contact-sub {
+      color: rgba(0,0,0,0.72);
+    }
+    [data-theme="light"] .contact-btn-secondary {
+      color: #1d1d1f;
+      border-color: rgba(0,0,0,0.18);
+    }
+    [data-theme="light"] .contact-btn-secondary:hover {
+      color: #1d1d1f;
+      border-color: rgba(0,0,0,0.4);
+    }
+    [data-theme="light"] footer {
+      background: #ffffff;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    [data-theme="light"] .footer-text {
+      color: rgba(0,0,0,0.46);
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      #hamburger { display: flex; }
+      #mobile-menu { display: block; }
+      #mobile-overlay { display: block; }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-photo-wrap { order: -1; }
+      .about-photo-wrap img { aspect-ratio: 4/3; }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-btns { flex-direction: column; align-items: center; }
+      .contact-btn { width: 100%; max-width: 300px; justify-content: center; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
+    }
+
+    /* ─── STAGGER DELAYS ──────────────────────────────────────────── */
+    .stagger-1 { transition-delay: 80ms; }
+    .stagger-2 { transition-delay: 160ms; }
+    .stagger-3 { transition-delay: 240ms; }
+    .stagger-4 { transition-delay: 320ms; }
+    .stagger-5 { transition-delay: 400ms; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ────────────────────────────────────────────────── -->
+<nav id="nav" role="navigation" aria-label="Navegação principal">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">PC</a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home"        data-i18n="nav.home"       class="active">Home</a></li>
+      <li><a href="#sobre"       data-i18n="nav.sobre">Sobre</a></li>
+      <li><a href="#experiencia" data-i18n="nav.exp">Experiência</a></li>
+      <li><a href="#projetos"    data-i18n="nav.proj">Projetos</a></li>
+      <li><a href="#contato"     data-i18n="nav.contato">Contato</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button id="lang-btn" class="nav-btn" aria-label="Alternar idioma">PT</button>
+      <button id="theme-btn" class="nav-btn" aria-label="Alternar tema">
+        <!-- icon injected by JS -->
+      </button>
+      <button id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-overlay" aria-hidden="true"></div>
+<div id="mobile-menu" aria-hidden="true">
+  <ul class="mobile-links" id="mobile-links">
+    <li><a href="#home"        data-i18n="nav.home">Home</a></li>
+    <li><a href="#sobre"       data-i18n="nav.sobre">Sobre</a></li>
+    <li><a href="#experiencia" data-i18n="nav.exp">Experiência</a></li>
+    <li><a href="#projetos"    data-i18n="nav.proj">Projetos</a></li>
+    <li><a href="#contato"     data-i18n="nav.contato">Contato</a></li>
+  </ul>
+</div>
+
+<!-- ── HOME ──────────────────────────────────────────────────────── -->
+<section id="home" aria-label="Home">
+  <p class="hero-eyebrow reveal" data-i18n="home.eyebrow">FGV-EESP · Economia</p>
+  <h1 class="hero-name reveal stagger-1">Pedro Campelo</h1>
+  <p class="hero-subtitle reveal stagger-2" data-i18n="home.subtitle">Análise aplicada, economia e políticas públicas.</p>
+  <p class="hero-description reveal stagger-3" data-i18n="home.description">
+    Estudante de Economia na FGV-EESP, com atuação em pesquisa acadêmica e consultoria para o setor público.
+  </p>
+  <div class="hero-tags reveal stagger-3">
+    <span class="hero-tag" data-i18n="tag.impact">Avaliação de Impacto</span>
+    <span class="hero-tag" data-i18n="tag.consulting">Consultoria</span>
+    <span class="hero-tag" data-i18n="tag.micro">Microeconomia Aplicada</span>
+  </div>
+  <div class="hero-ctas reveal stagger-4">
+    <a href="#experiencia" class="btn-primary" data-i18n="home.cta1">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      Ver Experiência
+    </a>
+    <a href="#contato" class="btn-outline" data-i18n="home.cta2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Entrar em Contato
+    </a>
+  </div>
+
+  <div class="scroll-hint" id="scroll-hint" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- ── ABOUT ──────────────────────────────────────────────────────── -->
+<section id="sobre" aria-label="Sobre Pedro Campelo">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <p class="about-label reveal" data-i18n="about.label">Sobre</p>
+        <h2 class="about-heading reveal stagger-1" data-i18n="about.heading">Rigor empírico,<br>impacto concreto.</h2>
+        <p class="about-text reveal stagger-2" data-i18n="about.p1">
+          Sou estudante de Economia na FGV-EESP, interessado em microeconomia aplicada, políticas públicas e no uso de dados para orientar decisões.
+        </p>
+        <p class="about-text reveal stagger-3" data-i18n="about.p2">
+          Ao longo da graduação, me envolvi com pesquisa acadêmica, projetos de consultoria no setor público e algumas iniciativas institucionais. Gosto especialmente de pegar problemas meio nebulosos e organizar as ideias até que fiquem claras o suficiente para análise e ação.
+        </p>
+        <p class="about-text reveal stagger-4" data-i18n="about.p3">
+          Tenho interesse em políticas públicas baseadas em evidência, mas sem perder de vista o contexto social e institucional em que elas operam.
+        </p>
+        <blockquote class="about-quote reveal stagger-5" data-i18n="about.quote">
+          "A clareza na formulação do problema é tão importante quanto o rigor na sua solução."
+        </blockquote>
+      </div>
+      <div class="about-photo-wrap reveal stagger-2">
+        <img src="about.jpg" alt="Pedro Campelo" width="380" height="475" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ─────────────────────────────────────────────────── -->
+<section id="experiencia" aria-label="Experiência">
+  <div class="section-inner">
+    <p class="section-label reveal" data-i18n="exp.label">Trajetória</p>
+    <h2 class="section-heading reveal stagger-1" data-i18n="exp.heading">Experiência</h2>
+
+    <div class="timeline">
+
+      <!-- Item 1 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-period" data-i18n="exp1.period">Jun 2025 – Jun 2026</span>
+            <span class="timeline-badge" data-i18n="exp1.badge">Iniciação Científica</span>
+          </div>
+          <p class="timeline-org">FGV-EESP</p>
+          <h3 class="timeline-title" data-i18n="exp1.title">Pesquisador Bolsista de Iniciação Científica</h3>
+          <p class="timeline-desc" data-i18n="exp1.desc">
+            Pesquisa sobre desigualdades de gênero, choques climáticos e mercado de trabalho rural brasileiro, investigando efeitos heterogêneos por sexo na alocação do trabalho.
+          </p>
+          <a href="https://eesp.fgv.br/integrante/danyelle-branco" target="_blank" rel="noopener" class="timeline-link" data-i18n="exp1.advisor">
+            Orientação: Profª Danyelle Branco
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="timeline-item reveal stagger-1">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-period" data-i18n="exp2.period">Set 2025 – Out 2025</span>
+          </div>
+          <p class="timeline-org">FGV-EESP</p>
+          <h3 class="timeline-title" data-i18n="exp2.title">Assistente de Pesquisa</h3>
+          <p class="timeline-desc" data-i18n="exp2.desc">
+            Contribuição em projeto sobre os impactos da transição energética no mercado de trabalho, com foco em recorte de gênero. Revisão bibliográfica e síntese de literatura aplicada.
+          </p>
+          <a href="https://eesp.fgv.br/integrante/priscilla-albuquerque-tavares" target="_blank" rel="noopener" class="timeline-link" data-i18n="exp2.advisor">
+            Orientação: Profª Priscilla Tavares
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="timeline-item reveal stagger-2">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-period" data-i18n="exp3.period">Set 2024 – Dez 2025</span>
+          </div>
+          <p class="timeline-org">CJP-FGV</p>
+          <h3 class="timeline-title" data-i18n="exp3.title">Trainee → Consultor → Gerente</h3>
+          <p class="timeline-desc" data-i18n="exp3.desc">
+            Atuação em redesenho de processos, diagnóstico de disfunções organizacionais, planejamento estratégico, governança e liderança de equipe. Participação no projeto 100 Melhores ONGs e prospecção comercial no setor público.
+          </p>
+          <a href="https://premiomelhores.org/home" target="_blank" rel="noopener" class="timeline-link" data-i18n="exp3.link">
+            Projeto: 100 Melhores ONGs
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="timeline-item reveal stagger-3">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-period" data-i18n="exp4.period">Mar 2024 – Ago 2025</span>
+          </div>
+          <p class="timeline-org">DAGV — FGV</p>
+          <h3 class="timeline-title" data-i18n="exp4.title">Membro da Vice-Presidência Acadêmica de Economia</h3>
+          <p class="timeline-desc" data-i18n="exp4.desc">
+            Participação em reuniões semanais de tomada de decisão, planejamento e execução de projetos acadêmicos e culturais para os alunos de Economia da FGV-EESP.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+
+    <div class="exp-footer reveal">
+      <a id="cv-link" href="https://drive.google.com/file/d/1yIaEujJh4ibGYHvIoU4K54mXM6A6UF30/view?usp=sharing" target="_blank" rel="noopener" class="btn-cv">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <span data-i18n="exp.cv">Ver Currículo Completo (PDF)</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PROJECTS ───────────────────────────────────────────────────── -->
+<section id="projetos" aria-label="Projetos e Pesquisa">
+  <div class="section-inner">
+    <p class="section-label reveal" data-i18n="proj.label">Pesquisa & Projetos</p>
+    <h2 class="section-heading reveal stagger-1" data-i18n="proj.heading">Projetos</h2>
+
+    <div class="projects-grid">
+
+      <!-- Card 1 -->
+      <article class="project-card reveal" aria-label="Projeto Entre o Campo e o Lar">
+        <div class="project-card-meta">
+          <span class="project-type-badge badge-research" data-i18n="proj.type.research">Pesquisa</span>
+          <span class="project-year">2025–2026</span>
+        </div>
+        <h3 class="project-title" data-i18n="proj1.title">Entre o Campo e o Lar</h3>
+        <p class="project-meta-line" data-i18n="proj1.meta">Working Paper · Em desenvolvimento</p>
+        <p class="project-desc" data-i18n="proj1.desc">
+          Investiga se choques climáticos — especialmente secas — afetam de forma desigual os padrões de trabalho de homens e mulheres em zonas rurais brasileiras, com foco em efeitos heterogêneos por sexo na alocação do trabalho.
+        </p>
+        <div class="project-footer">
+          <span class="project-status status-soon" data-i18n="status.soon">Em breve</span>
+          <a class="project-link is-hidden" data-project-key="proj1" data-i18n="proj.link" target="_blank" rel="noopener" aria-hidden="true">
+            Ver projeto
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="project-card reveal stagger-1" aria-label="Projeto Transição Energética">
+        <div class="project-card-meta">
+          <span class="project-type-badge badge-research" data-i18n="proj.type.research">Pesquisa</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h3 class="project-title" data-i18n="proj2.title">Transição Energética no Mercado de Trabalho</h3>
+        <p class="project-meta-line" data-i18n="proj2.meta">Pesquisa · Revisão Bibliográfica</p>
+        <p class="project-desc" data-i18n="proj2.desc">
+          Projeto sobre os impactos da transição energética no mercado de trabalho, com foco em gênero. Mapeamento da literatura e sistematização de evidências para análise dos efeitos distributivos da descarbonização.
+        </p>
+        <div class="project-footer">
+          <span class="project-status status-soon" data-i18n="status.soon">Em breve</span>
+          <a class="project-link is-hidden" data-project-key="proj2" data-i18n="proj.link" target="_blank" rel="noopener" aria-hidden="true">
+            Ver projeto
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="project-card reveal stagger-2" aria-label="Projeto Redesenho de Processos">
+        <div class="project-card-meta">
+          <span class="project-type-badge badge-consulting" data-i18n="proj.type.consulting">Consultoria Júnior</span>
+          <span class="project-year">2024</span>
+        </div>
+        <h3 class="project-title" data-i18n="proj3.title">Redesenho de Processos</h3>
+        <p class="project-meta-line" data-i18n="proj3.meta">Relatório · Confidencial</p>
+        <p class="project-desc" data-i18n="proj3.desc">
+          Diagnóstico organizacional e redesenho de processos internos, com propostas práticas para aumentar eficiência, engajamento dos membros e impacto organizacional em entidade do setor público.
+        </p>
+        <div class="project-footer">
+          <span class="project-status status-nda" data-i18n="status.nda">Sob NDA</span>
+          <a class="project-link is-hidden" data-project-key="proj3" data-i18n="proj.link" target="_blank" rel="noopener" aria-hidden="true">
+            Ver projeto
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────────── -->
+<section id="contato" aria-label="Contato">
+  <div class="section-inner">
+    <p class="section-label reveal" style="color: var(--apple-blue);" data-i18n="contact.label">Contato</p>
+    <h2 class="contact-heading reveal stagger-1" data-i18n="contact.heading">Vamos conversar.</h2>
+    <p class="contact-sub reveal stagger-2" data-i18n="contact.sub">
+      Aberto a contatos acadêmicos, institucionais e profissionais.
+    </p>
+    <div class="contact-btns reveal stagger-3">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pedrocampelo.fgv@gmail.com" target="_blank" rel="noopener" class="contact-btn contact-btn-email" data-i18n="contact.email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Enviar Email
+      </a>
+      <a href="https://www.linkedin.com/in/peedrocampelo/" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary" data-i18n="contact.linkedin">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://instagram.com/peedrocampelo" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary" data-i18n="contact.instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-text">
+      <span data-i18n="footer.copy">© YEAR Pedro Campelo · Todos os direitos reservados.</span><br>
+      <span data-i18n="footer.built">Projetado e Desenvolvido por Pedro Campelo.</span>
+    </p>
+  </div>
+</footer>
+
+<!-- ── BACK TO TOP ────────────────────────────────────────────────── -->
+<button id="back-top" aria-label="Voltar ao topo" title="Voltar ao topo">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ── SCRIPTS ────────────────────────────────────────────────────── -->
+<script>
+// ─── TRANSLATIONS ────────────────────────────────────────────────────
+const T = {
+  pt: {
+    'nav.home': 'Home',
+    'nav.sobre': 'Sobre',
+    'nav.exp': 'Experiência',
+    'nav.proj': 'Projetos',
+    'nav.contato': 'Contato',
+
+    'home.eyebrow': 'FGV-EESP · Economia',
+    'home.subtitle': 'Análise aplicada, economia e políticas públicas.',
+    'home.description': 'Estudante de Economia na FGV-EESP, com atuação em pesquisa acadêmica e consultoria para o setor público.',
+    'home.cta1': 'Ver Experiência',
+    'home.cta2': 'Entrar em Contato',
+
+    'tag.impact': 'Avaliação de Impacto',
+    'tag.consulting': 'Consultoria',
+    'tag.micro': 'Microeconomia Aplicada',
+    'tag.gender': 'Gênero',
+    'tag.climate': 'Choques Climáticos',
+    'tag.labor': 'Mercado de Trabalho',
+    'tag.empirical': 'Análise Empírica',
+    'tag.energy': 'Transição Energética',
+    'tag.process': 'Redesenho de Processos',
+    'tag.strategy': 'Planejamento Estratégico',
+    'tag.governance': 'Governança',
+    'tag.leadership': 'Liderança',
+    'tag.institutional': 'Gestão Institucional',
+    'tag.projects': 'Projetos Acadêmicos',
+
+    'about.label': 'Sobre',
+    'about.heading': 'Rigor empírico,\nimpacto concreto.',
+    'about.p1': 'Sou estudante de Economia na FGV-EESP, interessado em microeconomia aplicada, políticas públicas e no uso de dados para orientar decisões.',
+    'about.p2': 'Ao longo da graduação, me envolvi com pesquisa acadêmica, projetos de consultoria no setor público e algumas iniciativas institucionais. Gosto especialmente de pegar problemas meio nebulosos e organizar as ideias até que fiquem claras o suficiente para análise e ação.',
+    'about.p3': 'Tenho interesse em políticas públicas baseadas em evidência, mas sem perder de vista o contexto social e institucional em que elas operam.',
+    'about.quote': '"A clareza na formulação do problema é tão importante quanto o rigor na sua solução."',
+
+    'exp.label': 'Trajetória',
+    'exp.heading': 'Experiência',
+    'exp.cv': 'Ver Currículo Completo (PDF)',
+
+    'exp1.period': 'Jun 2025 – Jun 2026',
+    'exp1.badge': 'Iniciação Científica',
+    'exp1.title': 'Pesquisador Bolsista de Iniciação Científica',
+    'exp1.desc': 'Pesquisa sobre desigualdades de gênero, choques climáticos e mercado de trabalho rural brasileiro, investigando efeitos heterogêneos por sexo na alocação do trabalho.',
+    'exp1.advisor': 'Orientação: Profª Danyelle Branco',
+
+    'exp2.period': 'Set 2025 – Out 2025',
+    'exp2.badge': 'Assistência de Pesquisa',
+    'exp2.title': 'Assistente de Pesquisa',
+    'exp2.desc': 'Contribuição em projeto sobre os impactos da transição energética no mercado de trabalho, com foco em recorte de gênero. Revisão bibliográfica e síntese de literatura aplicada.',
+    'exp2.advisor': 'Orientação: Profª Priscilla Tavares',
+
+    'exp3.period': 'Set 2024 – Dez 2025',
+    'exp3.badge': 'Consultoria Júnior',
+    'exp3.title': 'Trainee → Consultor → Gerente',
+    'exp3.desc': 'Atuação em redesenho de processos, diagnóstico de disfunções organizacionais, planejamento estratégico, governança e liderança de equipe. Participação no projeto 100 Melhores ONGs e prospecção comercial no setor público.',
+    'exp3.link': 'Projeto: 100 Melhores ONGs',
+
+    'exp4.period': 'Mar 2024 – Ago 2025',
+    'exp4.badge': 'Representação Estudantil',
+    'exp4.title': 'Membro da Vice-Presidência Acadêmica de Economia',
+    'exp4.desc': 'Participação em reuniões semanais de tomada de decisão, planejamento e execução de projetos acadêmicos e culturais para os alunos de Economia da FGV-EESP.',
+
+    'proj.label': 'Pesquisa & Projetos',
+    'proj.heading': 'Projetos',
+    'proj.link': 'Ver projeto',
+    'proj.type.research': 'Pesquisa',
+    'proj.type.consulting': 'Consultoria Júnior',
+
+    'proj1.title': 'Entre o Campo e o Lar',
+    'proj1.meta': 'Working Paper · Em desenvolvimento',
+    'proj1.desc': 'Investiga se choques climáticos — especialmente secas — afetam de forma desigual os padrões de trabalho de homens e mulheres em zonas rurais brasileiras, com foco em efeitos heterogêneos por sexo na alocação do trabalho.',
+
+    'proj2.title': 'Transição Energética no Mercado de Trabalho',
+    'proj2.meta': 'Pesquisa · Revisão Bibliográfica',
+    'proj2.desc': 'Projeto sobre os impactos da transição energética no mercado de trabalho, com foco em gênero. Mapeamento da literatura e sistematização de evidências para análise dos efeitos distributivos da descarbonização.',
+
+    'proj3.title': 'Redesenho de Processos',
+    'proj3.meta': 'Relatório · Confidencial',
+    'proj3.desc': 'Diagnóstico organizacional e redesenho de processos internos, com propostas práticas para aumentar eficiência, engajamento dos membros e impacto organizacional em entidade do setor público.',
+
+    'status.soon': 'Em breve',
+    'status.nda': 'Sob NDA',
+
+    'contact.label': 'Contato',
+    'contact.heading': 'Vamos conversar.',
+    'contact.sub': 'Aberto a contatos acadêmicos, institucionais e profissionais.',
+    'contact.email': 'Enviar Email',
+    'contact.linkedin': 'LinkedIn',
+    'contact.instagram': 'Instagram',
+
+    'footer.copy': '© YEAR Pedro Campelo · Todos os direitos reservados.',
+    'footer.built': 'Projetado e Desenvolvido por Pedro Campelo.',
+  },
+  en: {
+    'nav.home': 'Home',
+    'nav.sobre': 'About',
+    'nav.exp': 'Experience',
+    'nav.proj': 'Projects',
+    'nav.contato': 'Contact',
+
+    'home.eyebrow': 'FGV-EESP · Economics',
+    'home.subtitle': 'Applied analysis, economics and public policy.',
+    'home.description': 'Economics student at FGV-EESP, engaged in academic research and consulting for the public sector.',
+    'home.cta1': 'View Experience',
+    'home.cta2': 'Get in Touch',
+
+    'tag.impact': 'Impact Evaluation',
+    'tag.consulting': 'Consulting',
+    'tag.micro': 'Applied Microeconomics',
+    'tag.gender': 'Gender',
+    'tag.climate': 'Climate Shocks',
+    'tag.labor': 'Labor Markets',
+    'tag.empirical': 'Empirical Analysis',
+    'tag.energy': 'Energy Transition',
+    'tag.process': 'Process Redesign',
+    'tag.strategy': 'Strategic Planning',
+    'tag.governance': 'Governance',
+    'tag.leadership': 'Leadership',
+    'tag.institutional': 'Institutional Management',
+    'tag.projects': 'Academic Projects',
+
+    'about.label': 'About',
+    'about.heading': 'Empirical rigor,\nconcrete impact.',
+    'about.p1': 'I am an Economics student at FGV-EESP, interested in applied microeconomics, public policy, and using data to guide decisions.',
+    'about.p2': 'Throughout my undergraduate studies, I have been involved in academic research, consulting projects in the public sector, and institutional initiatives. I especially enjoy taking somewhat nebulous problems and organizing the ideas until they are clear enough for analysis and action.',
+    'about.p3': 'I am interested in evidence-based public policies, while keeping in view the social and institutional context in which they operate.',
+    'about.quote': '"Clarity in formulating the problem is just as important as rigor in solving it."',
+
+    'exp.label': 'Track Record',
+    'exp.heading': 'Experience',
+    'exp.cv': 'View Full CV (PDF)',
+
+    'exp1.period': 'Jun 2025 – Jun 2026',
+    'exp1.badge': 'Undergraduate Research',
+    'exp1.title': 'Undergraduate Research Fellow',
+    'exp1.desc': 'Research on gender inequalities, climate shocks, and the Brazilian rural labor market, investigating sex-heterogeneous effects in work allocation.',
+    'exp1.advisor': 'Advisor: Prof. Danyelle Branco',
+
+    'exp2.period': 'Sep 2025 – Oct 2025',
+    'exp2.badge': 'Research Assistance',
+    'exp2.title': 'Research Assistant',
+    'exp2.desc': 'Contribution to a project on the impacts of energy transition on the labor market, with a focus on gender. Literature review and synthesis of applied research.',
+    'exp2.advisor': 'Advisor: Prof. Priscilla Tavares',
+
+    'exp3.period': 'Sep 2024 – Dec 2025',
+    'exp3.badge': 'Junior Consulting',
+    'exp3.title': 'Trainee → Consultant → Manager',
+    'exp3.desc': 'Work in process redesign, organizational diagnostics, strategic planning, governance, and team leadership. Participation in the 100 Best NGOs project and business development in the public sector.',
+    'exp3.link': 'Project: 100 Best NGOs',
+
+    'exp4.period': 'Mar 2024 – Aug 2025',
+    'exp4.badge': 'Student Representation',
+    'exp4.title': 'Member, Academic Vice-Presidency of Economics',
+    'exp4.desc': 'Participation in weekly decision-making meetings, planning and execution of academic and cultural projects for Economics students at FGV-EESP.',
+
+    'proj.label': 'Research & Projects',
+    'proj.heading': 'Projects',
+    'proj.link': 'View project',
+    'proj.type.research': 'Research',
+    'proj.type.consulting': 'Junior Consulting',
+
+    'proj1.title': 'Between the Field and Home',
+    'proj1.meta': 'Working Paper · In Progress',
+    'proj1.desc': 'Investigates whether climate shocks — especially droughts — disproportionately affect work patterns of men and women in Brazilian rural areas, focusing on sex-heterogeneous effects in labor allocation.',
+
+    'proj2.title': 'Energy Transition and Labor Markets',
+    'proj2.meta': 'Research · Literature Review',
+    'proj2.desc': 'Project on the impacts of the energy transition on the labor market, with a focus on gender. Literature mapping and evidence synthesis for analyzing the distributive effects of decarbonization.',
+
+    'proj3.title': 'Process Redesign',
+    'proj3.meta': 'Report · Confidential',
+    'proj3.desc': 'Organizational diagnosis and internal process redesign, with practical proposals to increase efficiency, member engagement, and organizational impact in a public sector entity.',
+
+    'status.soon': 'Coming Soon',
+    'status.nda': 'Under NDA',
+
+    'contact.label': 'Contact',
+    'contact.heading': "Let's talk.",
+    'contact.sub': 'Open to academic, institutional, and professional inquiries.',
+    'contact.email': 'Send Email',
+    'contact.linkedin': 'LinkedIn',
+    'contact.instagram': 'Instagram',
+
+    'footer.copy': '© YEAR Pedro Campelo · All rights reserved.',
+    'footer.built': 'Designed and Developed by Pedro Campelo.',
+  }
+};
+
+// ─── STATE ───────────────────────────────────────────────────────────
+let currentLang = (() => { try { return localStorage.getItem('pc-lang') || 'en'; } catch (err) { return 'en'; } })();
+let currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+
+// ─── ICONS ───────────────────────────────────────────────────────────
+const ICONS = {
+  sun: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
+  moon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`
+};
+
+
+// ─── EDITABLE LINKS ─────────────────────────────────────────────────
+const RESOURCE_LINKS = {
+  cv: {
+    pt: 'https://drive.google.com/file/d/1yIaEujJh4ibGYHvIoU4K54mXM6A6UF30/view?usp=sharing',
+    en: 'https://drive.google.com/file/d/1yIaEujJh4ibGYHvIoU4K54mXM6A6UF30/view?usp=sharing' // Replace with the English CV when available.
+  },
+  projects: {
+    proj1: '', // Add the public URL for project 1 here.
+    proj2: '', // Add the public URL for project 2 here.
+    proj3: ''  // Add the public URL for project 3 here.
+  }
+};
+
+function applyResourceLinks(lang) {
+  const cvLink = document.getElementById('cv-link');
+  if (cvLink) {
+    const cvUrl = RESOURCE_LINKS.cv[lang] || RESOURCE_LINKS.cv.pt || '';
+    if (cvUrl) {
+      cvLink.href = cvUrl;
+      cvLink.setAttribute('target', '_blank');
+      cvLink.setAttribute('rel', 'noopener');
+    }
+  }
+
+  document.querySelectorAll('[data-project-key]').forEach(anchor => {
+    const key = anchor.getAttribute('data-project-key');
+    const url = RESOURCE_LINKS.projects[key];
+
+    if (url) {
+      anchor.href = url;
+      anchor.classList.remove('is-hidden');
+      anchor.setAttribute('aria-hidden', 'false');
+    } else {
+      anchor.removeAttribute('href');
+      anchor.classList.add('is-hidden');
+      anchor.setAttribute('aria-hidden', 'true');
+    }
+  });
+}
+
+// ─── THEME ───────────────────────────────────────────────────────────
+function setTheme(theme) {
+  currentTheme = theme;
+  document.body.classList.add('theme-transition');
+  document.documentElement.setAttribute('data-theme', theme);
+  try { localStorage.setItem('pc-theme', theme); } catch (err) {}
+  document.getElementById('theme-btn').innerHTML = theme === 'dark' ? ICONS.sun : ICONS.moon;
+  document.getElementById('theme-btn').setAttribute('aria-label', theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro');
+  setTimeout(() => document.body.classList.remove('theme-transition'), 300);
+}
+
+document.getElementById('theme-btn').addEventListener('click', () => {
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+
+// Init theme icon
+setTheme(currentTheme);
+
+// ─── LANGUAGE ────────────────────────────────────────────────────────
+function setLanguage(lang) {
+  currentLang = lang;
+  try { localStorage.setItem('pc-lang', lang); } catch (err) {}
+  document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
+  document.getElementById('lang-btn').textContent = lang === 'pt' ? 'EN' : 'PT';
+  document.getElementById('lang-btn').setAttribute('aria-label', lang === 'pt' ? 'Switch to English' : 'Mudar para Português');
+
+  const year = String(new Date().getFullYear());
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = T[lang][key];
+    if (typeof val !== 'string') return;
+    const text = val.replace('YEAR', year);
+
+    if (/^H[1-6]$/.test(el.tagName)) {
+      el.innerHTML = text.replace(/\n/g, '<br>');
+      return;
+    }
+
+    const directSvg = Array.from(el.children).find(child => child.tagName === 'SVG');
+    if (directSvg) {
+      const svgHTML = directSvg.outerHTML;
+      const firstMeaningfulTextNode = Array.from(el.childNodes).find(
+        node => node.nodeType === Node.TEXT_NODE && node.textContent.trim()
+      );
+      const textFirst = firstMeaningfulTextNode === el.firstChild;
+      el.innerHTML = textFirst ? `${text} ${svgHTML}` : `${svgHTML} ${text}`;
+      return;
+    }
+
+    el.textContent = text;
+  });
+
+  applyResourceLinks(lang);
+}
+
+document.getElementById('lang-btn').addEventListener('click', () => {
+  setLanguage(currentLang === 'pt' ? 'en' : 'pt');
+});
+
+// Init language
+setLanguage(currentLang);
+
+// ─── MOBILE MENU ─────────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileOverlay = document.getElementById('mobile-overlay');
+
+function openMenu() {
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  mobileMenu.classList.add('open');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+  mobileOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  mobileOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.contains('open') ? closeMenu() : openMenu();
+});
+mobileOverlay.addEventListener('click', closeMenu);
+
+document.querySelectorAll('#mobile-links a').forEach(a => {
+  a.addEventListener('click', closeMenu);
+});
+
+// ─── SCROLL REVEAL ───────────────────────────────────────────────────
+// Hero elements: trigger immediately on load (always in viewport)
+function triggerHero() {
+  const heroEls = document.querySelectorAll('#home .reveal');
+  heroEls.forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 80 + i * 110);
+  });
+}
+// Use rAF to ensure layout is complete before triggering
+requestAnimationFrame(() => requestAnimationFrame(triggerHero));
+
+// All other sections: IntersectionObserver
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  if (!el.closest('#home')) revealObserver.observe(el);
+});
+
+// ─── ACTIVE NAV (IntersectionObserver) ───────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#nav-links a, #mobile-links a');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.getAttribute('id');
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+        a.toggleAttribute('aria-current', a.getAttribute('href') === `#${id}`);
+      });
+    }
+  });
+}, { rootMargin: '-30% 0px -65% 0px', threshold: 0 });
+
+sections.forEach(s => navObserver.observe(s));
+
+// ─── SCROLL HINT ─────────────────────────────────────────────────────
+const scrollHint = document.getElementById('scroll-hint');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 120) scrollHint.classList.add('hidden');
+  else scrollHint.classList.remove('hidden');
+}, { passive: true });
+
+// ─── BACK TO TOP ─────────────────────────────────────────────────────
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 300);
+}, { passive: true });
+
+backTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
