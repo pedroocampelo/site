@@ -1,7 +1,6 @@
-## My new app
+## My portfolio
 
-This app was created using https://getmocha.com.
-Need help or want to join the community? Join our [Discord](https://discord.gg/shDEGBSe2d).
+This app was created with vibe coding using Claude.
 
 To run the devserver:
 ```
