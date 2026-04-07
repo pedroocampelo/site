@@ -1,9 +1,8 @@
 ## My portfolio
 
-This app was created with vibe coding using Claude.
+This app was created using vibe coding with Claude.
 
-To run the devserver on Cloudfare Pages:
-
+To run the dev server on Cloudflare Pages:
 ```
 Build command: exit 0
 Deploy command: npx wrangler deploy
