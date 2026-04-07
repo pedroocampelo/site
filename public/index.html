@@ -486,10 +486,9 @@
       position: relative;
     }
     .about-photo-wrap img {
+      display: block;
       width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      object-position: top center;
+      height: auto;
       border-radius: var(--radius-lg);
     }
     [data-theme="dark"] .about-photo-wrap img {
@@ -1161,8 +1160,8 @@
           "A clareza na formulação do problema é tão importante quanto o rigor na sua solução."
         </blockquote>
       </div>
-      <div class="about-photo-wrap reveal stagger-2">
-        <img src="/about.jpg" alt="Pedro Campelo" width="380" height="475" loading="lazy" />
+      <div class="about-photo-wrap">
+        <img src="/about.jpg" alt="Pedro Campelo" width="380" height="475" decoding="async" fetchpriority="high" />
       </div>
     </div>
   </div>
