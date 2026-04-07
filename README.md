@@ -2,8 +2,8 @@
 
 This app was created with vibe coding using Claude.
 
-To run the devserver:
+To run the devserver on Cloudfare Pages:
+
 ```
-npm install
-npm run dev
+npx wrangler pages dev 
 ```
