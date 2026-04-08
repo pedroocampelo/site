@@ -1,5 +1,7 @@
 ## My portfolio
 
-This app was created using vibe coding with Claude.
+This site was created using vibe coding with Claude.
+
+This site should be deployed at Cloudfare Workers.
 
 Deploy command: `npx wrangler deploy`
