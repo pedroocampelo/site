@@ -136,6 +136,7 @@
       .reveal.visible { transition: none; }
       html { scroll-behavior: auto; }
       * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .scroll-section > .section-inner { transform: none; opacity: 1; }
     }
 
     /* ─── NAVIGATION ──────────────────────────────────────────────── */
@@ -833,6 +834,17 @@
       color: #fff;
     }
 
+    [data-theme="dark"] .contact-btn-email {
+      background: transparent;
+      color: rgba(255,255,255,0.84);
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+    [data-theme="dark"] .contact-btn-email:hover {
+      background: transparent;
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+    }
+
     /* ─── FOOTER ──────────────────────────────────────────────────── */
     footer {
       background: var(--bg-footer);
@@ -878,6 +890,320 @@
       pointer-events: auto;
     }
     #back-top:hover { background: var(--apple-blue-hover); }
+
+
+
+    /* ─── SCROLL PROGRESS + SECTION MOTION ───────────────────────── */
+    .page-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 1400;
+      pointer-events: none;
+      background: transparent;
+    }
+    .page-progress-bar {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(41,151,255,0.18), var(--apple-blue-dark), #8ad3ff);
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      box-shadow: 0 0 20px rgba(41,151,255,0.35);
+    }
+    section {
+      width: 100%;
+      position: relative;
+      overflow: clip;
+      --section-progress: 0;
+    }
+    .scroll-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 12% 14%, rgb(41 151 255 / calc(0.06 + var(--section-progress) * 0.08)), transparent 30%),
+        radial-gradient(circle at 88% 8%, rgb(90 200 250 / calc(0.03 + var(--section-progress) * 0.05)), transparent 24%);
+      opacity: calc(0.18 + var(--section-progress) * 0.7);
+      transition: opacity 300ms ease;
+    }
+    .scroll-section > .section-inner {
+      transform: translateY(calc((1 - var(--section-progress)) * 22px));
+      opacity: calc(0.82 + var(--section-progress) * 0.18);
+      transition: transform 240ms ease, opacity 240ms ease;
+      will-change: transform, opacity;
+    }
+
+/* ─── HERO TYPOGRAPHIC MOTION ─────────────────────────────────── */
+#home > * {
+  position: relative;
+  z-index: 1;
+}
+.hero-name {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.16em;
+  text-wrap: balance;
+  margin-bottom: 14px;
+}
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(6px);
+  clip-path: inset(0 0 100% 0);
+  will-change: transform, opacity, filter, clip-path;
+}
+.hero-name-rule {
+  width: min(132px, 28vw);
+  height: 1px;
+  margin: 0 auto 24px;
+  background: linear-gradient(90deg, transparent, rgba(41,151,255,0.88), transparent);
+  opacity: 0;
+  transform: scaleX(0.3);
+  transform-origin: center;
+}
+.hero-eyebrow {
+  opacity: 0;
+  transform: translateY(16px);
+  letter-spacing: 0.16em;
+  will-change: transform, opacity, letter-spacing;
+}
+.hero-subtitle {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  will-change: clip-path, opacity;
+}
+.hero-description,
+.hero-tags,
+.hero-ctas {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+#home.hero-motion-ready .hero-eyebrow {
+  animation: heroEyebrowIn 780ms var(--ease-out-quint) 0.04s both;
+}
+#home.hero-motion-ready .hero-word-1 {
+  animation: heroWordReveal 900ms var(--ease-out-quint) 0.14s both;
+}
+#home.hero-motion-ready .hero-word-2 {
+  animation: heroWordReveal 900ms var(--ease-out-quint) 0.26s both;
+}
+#home.hero-motion-ready .hero-name-rule {
+  animation: heroRuleReveal 820ms var(--ease-out-quint) 0.54s both;
+}
+#home.hero-motion-ready .hero-subtitle {
+  animation: heroLineReveal 920ms var(--ease-out-quint) 0.34s both;
+}
+#home.hero-motion-ready .hero-description {
+  animation: heroFadeUp 760ms var(--ease-out-quint) 0.48s both;
+}
+#home.hero-motion-ready .hero-tags {
+  animation: heroFadeUp 760ms var(--ease-out-quint) 0.6s both;
+}
+#home.hero-motion-ready .hero-ctas {
+  animation: heroFadeUp 760ms var(--ease-out-quint) 0.72s both;
+}
+@keyframes heroEyebrowIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+    letter-spacing: 0.22em;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.12em;
+  }
+}
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heroWordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(6px);
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes heroRuleReveal {
+  from {
+    opacity: 0;
+    transform: scaleX(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+@keyframes heroLineReveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+    /* ─── TIMELINE PROGRESSION ────────────────────────────────────── */
+    .timeline {
+      --timeline-progress: 0;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 2px;
+      height: calc((100% - 16px) * var(--timeline-progress));
+      background: linear-gradient(180deg, rgba(138,211,255,0.4), var(--apple-blue-dark), rgba(41,151,255,0.1));
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(41,151,255,0.25);
+      transition: height 180ms linear;
+    }
+    .timeline-item {
+      transition: transform 240ms ease, opacity 240ms ease;
+    }
+    .timeline-item.is-past .timeline-dot,
+    .timeline-item.is-current .timeline-dot {
+      box-shadow: 0 0 0 6px rgba(41,151,255,0.12), 0 0 22px rgba(41,151,255,0.28);
+      transform: scale(1.08);
+    }
+    .timeline-item.is-past .timeline-card,
+    .timeline-item.is-current .timeline-card {
+      border-color: rgba(41,151,255,0.22);
+    }
+    .timeline-card {
+      border: 1px solid transparent;
+    }
+
+    /* ─── PROJECT SPOTLIGHT ──────────────────────────────────────── */
+    .project-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      --spotlight-x: 50%;
+      --spotlight-y: 50%;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(240px circle at var(--spotlight-x) var(--spotlight-y), rgba(41,151,255,0.16), transparent 44%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), transparent 35%);
+      opacity: 0;
+      transition: opacity 220ms ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .project-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(41,151,255,0.45), rgba(255,255,255,0.05), rgba(138,211,255,0.2));
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 220ms ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .project-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .project-card:hover::before,
+    .project-card:focus-within::before,
+    .project-card:hover::after,
+    .project-card:focus-within::after {
+      opacity: 1;
+    }
+    .project-card:hover .project-link svg,
+    .project-card:focus-within .project-link svg {
+      transform: translate(2px, -2px);
+    }
+    .project-link svg {
+      transition: transform 180ms ease;
+    }
+
+    /* ─── CONTACT MICROINTERACTIONS ──────────────────────────────── */
+    .contact-btn {
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 50%, transparent 100%);
+      transform: translateX(-120%);
+      transition: transform 480ms var(--ease-standard);
+      pointer-events: none;
+      opacity: 0.55;
+    }
+    .contact-btn:hover::before,
+    .contact-btn:focus-visible::before {
+      transform: translateX(120%);
+    }
+    .contact-btn svg {
+      transition: transform 180ms ease;
+    }
+    .contact-btn:hover svg,
+    .contact-btn:focus-visible svg {
+      transform: translateY(-1px);
+    }
+
+    @keyframes drawChart {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.6); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulseBar {
+      0%, 100% { transform: scaleX(0.92); opacity: 0.72; }
+      50% { transform: scaleX(1); opacity: 1; }
+    }
+    @keyframes floatOrbA {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(18px, -18px, 0); }
+    }
+    @keyframes floatOrbB {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(-16px, 14px, 0); }
+    }
 
 
     /* ─── LIGHT THEME OVERRIDES ───────────────────────────────────── */
@@ -931,6 +1257,20 @@
     [data-theme="light"] #home {
       background: #ffffff;
     }
+
+    [data-theme="light"] .hero-name-rule {
+      background: linear-gradient(90deg, transparent, rgba(0,113,227,0.86), transparent);
+    }
+    [data-theme="light"] .project-card::before {
+      background:
+        radial-gradient(240px circle at var(--spotlight-x) var(--spotlight-y), rgba(41,151,255,0.12), transparent 44%),
+        linear-gradient(180deg, rgba(255,255,255,0.6), transparent 35%);
+    }
+    [data-theme="light"] .timeline::after {
+      background: linear-gradient(180deg, rgba(0,113,227,0.18), rgba(0,113,227,0.88), rgba(0,113,227,0.08));
+      box-shadow: 0 0 18px rgba(0,113,227,0.18);
+    }
+
     [data-theme="light"] .hero-name {
       color: #1d1d1f;
     }
@@ -1021,12 +1361,14 @@
       color: rgba(0,0,0,0.72);
     }
     [data-theme="light"] .contact-btn-secondary {
-      color: #1d1d1f;
-      border-color: rgba(0,0,0,0.18);
+      background: var(--apple-blue);
+      color: #fff;
+      border-color: transparent;
     }
     [data-theme="light"] .contact-btn-secondary:hover {
-      color: #1d1d1f;
-      border-color: rgba(0,0,0,0.4);
+      background: var(--apple-blue-hover);
+      color: #fff;
+      border-color: transparent;
     }
     [data-theme="light"] footer {
       background: #ffffff;
@@ -1060,6 +1402,7 @@
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
+
       .hero-ctas { flex-direction: column; align-items: center; }
       .btn-primary, .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
     }
@@ -1073,6 +1416,7 @@
   </style>
 </head>
 <body>
+<div class="page-progress" aria-hidden="true"><span class="page-progress-bar" id="page-progress"></span></div>
 
 <!-- ── NAVIGATION ────────────────────────────────────────────────── -->
 <nav id="nav" role="navigation" aria-label="Navegação principal">
@@ -1112,6 +1456,7 @@
 </div>
 
 <!-- ── HOME ──────────────────────────────────────────────────────── -->
+
 <section id="home" aria-label="Home">
   <p class="hero-eyebrow reveal" data-i18n="home.eyebrow">FGV-EESP · Economia</p>
   <h1 class="hero-name reveal stagger-1">Pedro Campelo</h1>
@@ -1141,7 +1486,7 @@
 </section>
 
 <!-- ── ABOUT ──────────────────────────────────────────────────────── -->
-<section id="sobre" aria-label="Sobre Pedro Campelo">
+<section id="sobre" class="scroll-section" aria-label="Sobre Pedro Campelo">
   <div class="section-inner">
     <div class="about-grid">
       <div>
@@ -1168,7 +1513,7 @@
 </section>
 
 <!-- ── EXPERIENCE ─────────────────────────────────────────────────── -->
-<section id="experiencia" aria-label="Experiência">
+<section id="experiencia" class="scroll-section" aria-label="Experiência">
   <div class="section-inner">
     <p class="section-label reveal" data-i18n="exp.label">Trajetória</p>
     <h2 class="section-heading reveal stagger-1" data-i18n="exp.heading">Experiência</h2>
@@ -1260,7 +1605,7 @@
 </section>
 
 <!-- ── PROJECTS ───────────────────────────────────────────────────── -->
-<section id="projetos" aria-label="Projetos e Pesquisa">
+<section id="projetos" class="scroll-section" aria-label="Projetos e Pesquisa">
   <div class="section-inner">
     <p class="section-label reveal" data-i18n="proj.label">Pesquisa & Projetos</p>
     <h2 class="section-heading reveal stagger-1" data-i18n="proj.heading">Projetos</h2>
@@ -1332,7 +1677,7 @@
 </section>
 
 <!-- ── CONTACT ────────────────────────────────────────────────────── -->
-<section id="contato" aria-label="Contato">
+<section id="contato" class="scroll-section" aria-label="Contato">
   <div class="section-inner">
     <p class="section-label reveal" style="color: var(--apple-blue);" data-i18n="contact.label">Contato</p>
     <h2 class="contact-heading reveal stagger-1" data-i18n="contact.heading">Vamos conversar.</h2>
@@ -1751,7 +2096,73 @@ const navObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => navObserver.observe(s));
 
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+const pageProgress = document.getElementById('page-progress');
+const scrollSections = document.querySelectorAll('.scroll-section');
+const timeline = document.querySelector('.timeline');
+const timelineItems = Array.from(document.querySelectorAll('.timeline-item'));
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--spotlight-x', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--spotlight-y', `${event.clientY - rect.top}px`);
+  });
+});
+
+let effectsTicking = false;
+function updateScrollDrivenEffects() {
+  const scrollTop = window.scrollY || window.pageYOffset;
+  const doc = document.documentElement;
+  const maxScroll = Math.max(doc.scrollHeight - window.innerHeight, 1);
+  const pageRatio = clamp(scrollTop / maxScroll, 0, 1);
+
+  if (pageProgress) {
+    pageProgress.style.transform = `scaleX(${pageRatio})`;
+  }
+
+  scrollSections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const raw = (window.innerHeight - rect.top) / (window.innerHeight + rect.height * 0.22);
+    const progress = clamp(raw, 0, 1);
+    section.style.setProperty('--section-progress', progress.toFixed(3));
+  });
+
+  if (timeline) {
+    const rect = timeline.getBoundingClientRect();
+    const progress = clamp((window.innerHeight * 0.72 - rect.top) / Math.max(rect.height, 1), 0, 1);
+    timeline.style.setProperty('--timeline-progress', progress.toFixed(3));
+
+    timelineItems.forEach(item => {
+      const itemRect = item.getBoundingClientRect();
+      const past = itemRect.top < window.innerHeight * 0.64;
+      const current = itemRect.top < window.innerHeight * 0.62 && itemRect.bottom > window.innerHeight * 0.36;
+      item.classList.toggle('is-past', past);
+      item.classList.toggle('is-current', current);
+    });
+  }
+
+  effectsTicking = false;
+}
+
+function requestScrollDrivenEffects() {
+  if (!effectsTicking) {
+    window.requestAnimationFrame(updateScrollDrivenEffects);
+    effectsTicking = true;
+  }
+}
+
+window.addEventListener('scroll', requestScrollDrivenEffects, { passive: true });
+window.addEventListener('resize', requestScrollDrivenEffects);
+requestScrollDrivenEffects();
+
 // ─── SCROLL HINT ─────────────────────────────────────────────────────
+
 const scrollHint = document.getElementById('scroll-hint');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 120) scrollHint.classList.add('hidden');
