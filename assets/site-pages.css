@@ -62,6 +62,9 @@ body {
     var(--surface-page);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -179,19 +182,22 @@ button {
 }
 
 .icon-btn {
-  width: 36px;
-  height: 36px;
+  min-width: 44px;
+  min-height: 44px;
+  height: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
-  border: 1px solid var(--border-color);
-  transition: border-color 180ms ease, transform 150ms ease;
+  border-radius: var(--radius-sm);
+  border: 0;
+  color: var(--text-muted);
+  transition: color 180ms ease, background 180ms ease, transform 150ms ease;
 }
 
 .icon-btn:hover,
 .icon-btn:focus-visible {
-  border-color: rgba(0, 113, 227, 0.55);
+  color: var(--text-body);
+  background: color-mix(in srgb, var(--surface-card) 70%, transparent);
 }
 
 .icon-btn:active {
@@ -200,6 +206,8 @@ button {
 
 .page-shell {
   padding-top: 48px;
+  flex: 1 0 auto;
+  width: 100%;
 }
 
 .container {
@@ -349,10 +357,27 @@ button {
 
 .post-card--text-only .post-card-title {
   margin-top: 0;
+  margin-bottom: 0;
+  font-size: clamp(30px, 3vw, 44px);
+  max-width: 18ch;
 }
 
 .post-card--text-only .post-card-excerpt {
   margin-top: 0;
+  max-width: 62ch;
+  font-size: 17px;
+}
+
+.post-card--text-only .post-card-link {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  min-height: 180px;
+  padding: 30px 32px;
+}
+
+.post-list {
+  max-width: 920px;
 }
 
 .post-card-cover {
@@ -485,13 +510,20 @@ button {
 
 .article-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.75fr);
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.65fr);
   gap: 24px;
   align-items: start;
 }
 
 .article-main {
   min-width: 0;
+  order: 2;
+}
+
+.article-side {
+  order: 1;
+  position: sticky;
+  top: 88px;
 }
 
 .article-header {
@@ -674,6 +706,8 @@ button {
 .footer {
   padding: 30px 0 44px;
   border-top: 1px solid var(--border-color);
+  margin-top: auto;
+  width: 100%;
 }
 
 .footer-inner {
@@ -704,6 +738,7 @@ button {
   font-size: 12px;
   line-height: 1.7;
   color: var(--text-soft);
+  text-align: center;
 }
 
 .page-progress {
@@ -729,6 +764,18 @@ button {
   .stats-row,
   .article-shell {
     grid-template-columns: 1fr;
+  }
+
+  .post-list {
+    max-width: none;
+  }
+
+  .post-card--text-only .post-card-link {
+    min-height: auto;
+  }
+
+  .article-side {
+    position: static;
   }
 }
 
