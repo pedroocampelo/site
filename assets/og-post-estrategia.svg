@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#000000"/>
+  <rect x="70" y="70" width="1060" height="490" rx="28" fill="#111111" stroke="#1f2937"/>
+  <path d="M860 120c86 0 160 74 160 160s-74 160-160 160-160-74-160-160 74-160 160-160Z" fill="#0071e3" opacity="0.18"/>
+  <path d="M860 166 905 268 1017 280 931 353 955 463 860 407 765 463 789 353 703 280 815 268Z" fill="#2997ff" opacity="0.55"/>
+  <text x="120" y="156" fill="#7fb8ff" font-size="20" font-family="Arial, sans-serif" letter-spacing="3">POST</text>
+  <text x="120" y="246" fill="#ffffff" font-size="64" font-family="Georgia, serif">O que faz uma estratégia</text>
+  <text x="120" y="316" fill="#ffffff" font-size="64" font-family="Georgia, serif">empírica convencer</text>
+  <text x="120" y="386" fill="#ffffff" font-size="64" font-family="Georgia, serif">de verdade?</text>
+  <text x="120" y="474" fill="#d1d5db" font-size="28" font-family="Arial, sans-serif">Critérios de identificação, validade externa e utilidade para decisão.</text>
+</svg>

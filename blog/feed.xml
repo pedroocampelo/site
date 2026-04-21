@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Pedro Campelo Blog</title>
+    <link>https://portfolio.pedro-campelo.workers.dev/blog/</link>
+    <description>Posts sobre avaliação de impacto, consultoria, microeconomia aplicada e políticas públicas.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Tue, 21 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>O que faz uma estratégia empírica convencer de verdade?</title>
+      <link>https://portfolio.pedro-campelo.workers.dev/blog/posts/estrategia-empirica/</link>
+      <guid>https://portfolio.pedro-campelo.workers.dev/blog/posts/estrategia-empirica/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Critérios para avaliar identificação, validade externa, transparência de método e utilidade para decisão.</description>
+    </item>
+  </channel>
+</rss>
