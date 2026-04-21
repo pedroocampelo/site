@@ -307,6 +307,7 @@ button {
 
 .card-grid,
 .post-grid,
+.post-list,
 .info-grid {
   display: grid;
   gap: 18px;
@@ -334,6 +335,24 @@ button {
 
 .post-card {
   overflow: hidden;
+}
+
+.post-card-link {
+  display: block;
+  padding: 22px;
+}
+
+.post-card-link:hover .post-card-title,
+.post-card-link:focus-visible .post-card-title {
+  color: var(--apple-blue-dark);
+}
+
+.post-card--text-only .post-card-title {
+  margin-top: 0;
+}
+
+.post-card--text-only .post-card-excerpt {
+  margin-top: 0;
 }
 
 .post-card-cover {
@@ -560,6 +579,18 @@ button {
   gap: 10px;
 }
 
+.references-list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.references-list li {
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
 .quote {
   padding: 20px 22px;
   border-left: 3px solid var(--apple-blue);
@@ -649,6 +680,11 @@ button {
   display: grid;
   gap: 16px;
   align-items: center;
+}
+
+.footer-inner.is-centered {
+  justify-items: center;
+  text-align: center;
 }
 
 .footer-links {

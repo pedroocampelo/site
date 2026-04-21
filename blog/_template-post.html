@@ -19,7 +19,9 @@
   <meta name="twitter:description" content="{{DESCRIPTION}}" />
   <meta name="twitter:image" content="{{ABSOLUTE_OG_IMAGE}}" />
   <link rel="canonical" href="{{ABSOLUTE_URL}}" />
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="/pclogo.png?v=2" />
+  <link rel="shortcut icon" href="/pclogo.png?v=2" />
+  <link rel="apple-touch-icon" href="/pclogo.png?v=2" />
   <link rel="alternate" type="application/rss+xml" title="Pedro Campelo Blog" href="https://portfolio.pedro-campelo.workers.dev/blog/feed.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,9 +36,11 @@
       <a class="site-logo" href="/">PC</a>
       <ul class="site-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/about/">Sobre</a></li>
+        <li><a href="/#sobre">Sobre</a></li>
+        <li><a href="/#experiencia">Experiência</a></li>
+        <li><a href="/#projetos">Projetos</a></li>
         <li><a href="/blog/" aria-current="page">Blog</a></li>
-        <li><a href="/contact/">Contato</a></li>
+        <li><a href="/#contato">Contato</a></li>
       </ul>
       <div class="nav-actions">
         <button id="theme-btn" class="icon-btn" aria-label="Alternar tema"></button>
@@ -47,13 +51,12 @@
   <main id="main-content" class="page-shell">
     <header class="article-header">
       <div class="container">
-        <p class="article-kicker">{{KICKER}}</p>
+        <p class="article-kicker">Blog</p>
         <h1 class="article-title">{{TITLE}}</h1>
         <p class="article-subtitle">{{SUBTITLE}}</p>
         <div class="article-meta">
           <time class="post-date" datetime="{{DATE_ISO}}">{{DATE_DISPLAY}}</time>
           <span class="post-category">{{READING_TIME}}</span>
-          <span class="post-category">{{CATEGORY}}</span>
         </div>
       </div>
     </header>
@@ -75,6 +78,10 @@
             <blockquote class="quote">{{QUOTE}}</blockquote>
             <h2 id="sec-3">{{SECTION_3_TITLE}}</h2>
             <p>{{SECTION_3_BODY}}</p>
+            <h2 id="referencias">Referências</h2>
+            <ol class="references-list">
+              {{REFERENCES}}
+            </ol>
           </div>
         </article>
 
@@ -85,19 +92,8 @@
               <li><a href="#sec-1">{{SECTION_1_TITLE}}</a></li>
               <li><a href="#sec-2">{{SECTION_2_TITLE}}</a></li>
               <li><a href="#sec-3">{{SECTION_3_TITLE}}</a></li>
+              <li><a href="#referencias">Referências</a></li>
             </ol>
-          </section>
-
-          <section class="author-card">
-            <h2>Autor</h2>
-            <div class="author-head">
-              <img src="/profile.jpg" alt="Pedro Campelo" />
-              <div>
-                <p class="author-name">Pedro Campelo</p>
-                <p class="author-role">Economia aplicada, avaliação de impacto e políticas públicas.</p>
-              </div>
-            </div>
-            <p class="card-copy">{{AUTHOR_BOX}}</p>
           </section>
         </aside>
       </div>
@@ -105,15 +101,8 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <nav class="footer-links" aria-label="Links secundários">
-        <a href="/">Home</a>
-        <a href="/about/">Sobre</a>
-        <a href="/blog/">Blog</a>
-        <a href="/contact/">Contato</a>
-        <a href="/privacy/">Privacidade</a>
-      </nav>
-      <p class="footer-copy">© <span class="js-year"></span> Pedro Campelo. Template interno para novos posts.</p>
+    <div class="container footer-inner is-centered">
+      <p class="footer-copy">© 2025 Pedro Campelo · Todos os direitos reservados.<br />Projetado e Desenvolvido por Pedro Campelo.</p>
     </div>
   </footer>
 
