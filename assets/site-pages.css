@@ -190,14 +190,14 @@ button {
   justify-content: center;
   border-radius: var(--radius-sm);
   border: 0;
-  color: var(--text-muted);
-  transition: color 180ms ease, background 180ms ease, transform 150ms ease;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 200ms ease, background 200ms ease, transform 150ms ease;
 }
 
 .icon-btn:hover,
 .icon-btn:focus-visible {
-  color: var(--text-body);
-  background: color-mix(in srgb, var(--surface-card) 70%, transparent);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .icon-btn:active {
@@ -372,12 +372,12 @@ button {
   display: grid;
   gap: 18px;
   align-content: start;
-  min-height: 180px;
-  padding: 30px 32px;
+  min-height: 196px;
+  padding: 34px 36px;
 }
 
 .post-list {
-  max-width: 920px;
+  max-width: 980px;
 }
 
 .post-card-cover {
@@ -511,19 +511,23 @@ button {
 .article-shell {
   display: grid;
   grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.65fr);
-  gap: 24px;
+  gap: 28px;
   align-items: start;
 }
 
 .article-main {
   min-width: 0;
-  order: 2;
 }
 
 .article-side {
-  order: 1;
   position: sticky;
   top: 88px;
+  align-self: start;
+  width: 100%;
+}
+
+.toc-card {
+  text-align: left;
 }
 
 .article-header {
@@ -739,6 +743,16 @@ button {
   line-height: 1.7;
   color: var(--text-soft);
   text-align: center;
+}
+
+[data-theme="light"] .icon-btn {
+  color: rgba(29, 29, 31, 0.82);
+}
+
+[data-theme="light"] .icon-btn:hover,
+[data-theme="light"] .icon-btn:focus-visible {
+  color: #1d1d1f;
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .page-progress {
