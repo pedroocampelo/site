@@ -5,20 +5,20 @@
     <link>https://portfolio.pedro-campelo.workers.dev/blog/</link>
     <description>Posts sobre avaliação de impacto, consultoria, microeconomia aplicada e políticas públicas.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 22 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 19 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Bem-vindo</title>
+      <link>https://portfolio.pedro-campelo.workers.dev/blog/posts/bem-vindo/</link>
+      <guid>https://portfolio.pedro-campelo.workers.dev/blog/posts/bem-vindo/</guid>
+      <pubDate>Sun, 19 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Um espaço para ler economia .</description>
+    </item>
     <item>
       <title>CadÚnico aos 25 anos: por que um cadastro bom importa tanto, e por que isso ainda não basta</title>
       <link>https://portfolio.pedro-campelo.workers.dev/blog/posts/cadunico-25-anos-focalizacao-politica-social-digitalizacao/</link>
       <guid>https://portfolio.pedro-campelo.workers.dev/blog/posts/cadunico-25-anos-focalizacao-politica-social-digitalizacao/</guid>
       <pubDate>Wed, 22 Apr 2026 12:00:00 GMT</pubDate>
       <description>A base que reúne 42,2 milhões de famílias virou uma peça central da política social brasileira. O ganho é real. O trabalho duro continua sendo manter o dado atualizado e a porta de entrada aberta.</description>
-    </item>
-    <item>
-      <title>O que faz uma estratégia empírica convencer de verdade?</title>
-      <link>https://portfolio.pedro-campelo.workers.dev/blog/posts/estrategia-empirica/</link>
-      <guid>https://portfolio.pedro-campelo.workers.dev/blog/posts/estrategia-empirica/</guid>
-      <pubDate>Tue, 21 Apr 2026 12:00:00 GMT</pubDate>
-      <description>Critérios para avaliar identificação, validade externa, transparência de método e utilidade para decisão.</description>
     </item>
   </channel>
 </rss>
