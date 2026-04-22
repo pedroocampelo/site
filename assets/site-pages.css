@@ -183,6 +183,7 @@ button {
 
 .icon-btn {
   min-width: 44px;
+  min-height: 44px;
   height: 28px;
   padding: 0 8px;
   display: inline-flex;
@@ -191,6 +192,7 @@ button {
   width: auto;
   border-radius: var(--radius-sm);
   border: 0;
+  background: transparent;
   outline: none;
   box-shadow: none;
   color: rgba(255, 255, 255, 0.8);
@@ -214,19 +216,32 @@ button {
 }
 
 .hero--blog-index {
-  padding-bottom: 40px;
+  padding: 72px 0 28px;
+}
+
+.hero--blog-index .container {
+  width: min(860px, calc(100% - 44px));
 }
 
 .hero--blog-index .hero-title {
-  max-width: 12ch;
-  font-size: clamp(34px, 5.2vw, 64px);
+  max-width: 9ch;
+  font-size: clamp(38px, 5.2vw, 60px);
   line-height: 0.98;
 }
 
 .hero--blog-index .hero-subtitle {
-  max-width: 860px;
-  margin-top: 18px;
-  font-size: clamp(18px, 1.9vw, 22px);
+  max-width: 640px;
+  margin-top: 16px;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.55;
+}
+
+.hero--blog-index .hero-actions {
+  margin-top: 24px;
+}
+
+.section--blog-index-posts .container {
+  width: min(860px, calc(100% - 44px));
 }
 
 .container {
@@ -377,27 +392,27 @@ button {
 .post-card--text-only .post-card-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: clamp(22px, 2.4vw, 34px);
+  font-size: clamp(24px, 2.3vw, 32px);
   line-height: 1.1;
-  max-width: 24ch;
+  max-width: 22ch;
 }
 
 .post-card--text-only .post-card-excerpt {
   margin-top: 0;
-  max-width: 64ch;
+  max-width: 60ch;
   font-size: 16px;
 }
 
 .post-card--text-only .post-card-link {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   align-content: start;
-  min-height: 156px;
-  padding: 28px 30px;
+  min-height: 176px;
+  padding: 30px 32px;
 }
 
 .post-list {
-  max-width: 860px;
+  max-width: 100%;
 }
 
 .post-card-cover {
@@ -530,20 +545,25 @@ button {
 
 .article-shell {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 32px;
+  max-width: 1060px;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+  gap: 40px;
   align-items: start;
 }
 
 .article-main {
   min-width: 0;
+  width: min(100%, 780px);
+  justify-self: start;
 }
 
 .article-side {
   position: sticky;
   top: 88px;
   align-self: start;
-  width: 280px;
+  width: 100%;
+  max-width: 240px;
 }
 
 .toc-card {
