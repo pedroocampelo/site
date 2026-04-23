@@ -662,6 +662,12 @@ button {
   border-radius: 0;
 }
 
+.figure--flat {
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
+
 .figure figcaption {
   padding: 14px 18px 18px;
   font-size: 13px;
