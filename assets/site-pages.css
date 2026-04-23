@@ -662,19 +662,6 @@ button {
   border-radius: 0;
 }
 
-.figure--flat {
-  background: transparent;
-  border-radius: 0;
-  overflow: visible;
-}
-
-.figure figcaption {
-  padding: 14px 18px 18px;
-  font-size: 13px;
-  line-height: 1.65;
-  color: var(--text-soft);
-}
-
 .article-chart {
   display: block;
   width: 100%;
@@ -682,8 +669,19 @@ button {
   margin: 0;
   background: transparent;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--radius-md);
   box-shadow: none;
+}
+
+.article-chart + p {
+  margin-top: -12px;
+}
+
+.figure figcaption {
+  padding: 14px 18px 18px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-soft);
 }
 
 .rich-text {
