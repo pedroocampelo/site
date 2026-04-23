@@ -674,10 +674,6 @@ button {
   box-shadow: none;
 }
 
-.article-chart + p {
-  margin-top: -18px;
-}
-
 .figure figcaption {
   padding: 14px 18px 18px;
   font-size: 13px;
