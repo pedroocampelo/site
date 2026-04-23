@@ -649,12 +649,17 @@ button {
 
 .figure {
   margin: 0 0 26px;
+  background: #fcfbf7;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  line-height: 0;
 }
 
 .figure img {
   width: 100%;
+  height: auto;
   display: block;
-  border-radius: var(--radius-md);
+  border-radius: 0;
 }
 
 .figure figcaption {
