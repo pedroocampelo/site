@@ -675,6 +675,17 @@ button {
   color: var(--text-soft);
 }
 
+.article-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .rich-text {
   display: grid;
   gap: 22px;
