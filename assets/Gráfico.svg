@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="456" viewBox="0 0 960 456" role="img" aria-labelledby="title desc">
   <title id="title">Escala do CadÚnico em março de 2026</title>
   <desc id="desc">Comparação entre famílias cadastradas no CadÚnico, famílias em pobreza ou baixa renda dentro do cadastro e famílias beneficiárias do Bolsa Família acompanhadas pelo cadastro.</desc>
-  <rect width="960" height="480" fill="#fcfbf7"/>
+  <rect width="960" height="456" rx="14" ry="14" fill="#fcfbf7"/>
   <text x="60" y="58" fill="#14213d" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Escala do CadÚnico em março de 2026</text>
   <text x="60" y="86" fill="#495057" font-family="Arial, Helvetica, sans-serif" font-size="16">O cadastro é maior que o Bolsa Família e funciona como base de entrada para dezenas de políticas</text>
 

@@ -669,12 +669,13 @@ button {
   margin: 0;
   background: transparent;
   border: 0;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
+  clip-path: inset(0 round var(--radius-lg));
   box-shadow: none;
 }
 
 .article-chart + p {
-  margin-top: -12px;
+  margin-top: -18px;
 }
 
 .figure figcaption {
