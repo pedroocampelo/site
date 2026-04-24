@@ -34,13 +34,11 @@ Each post should live in its own folder under `blog/posts/<slug>/index.html`.
 7. Add the new URL to `/sitemap.xml`.
 8. Commit and push to GitHub so Cloudflare deploys automatically.
 9. Or, locally:
-  - Process all new posts at once
+  - Process all new posts at once:
 python post_publisher.py
-
-    - Process a specific folder
+    - Process a specific folder:
 python post_publisher.py "CadÚnico"
-
-    - Overwrite post that already exists
+    - Overwrite post that already exists:
 python post_publisher.py "CadÚnico" --force
 
 ### SEO and platform notes
