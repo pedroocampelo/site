@@ -754,7 +754,7 @@
       transform: translateY(-3px);
       box-shadow: var(--shadow-card-hover);
     }
-    #blog-destaque {
+    #blog {
       background:
         radial-gradient(ellipse 65% 55% at 75% 55%, rgba(41,151,255,0.07), transparent 60%),
         var(--bg-hero);
@@ -1590,7 +1590,7 @@
     [data-theme="light"] .footer-links a:focus-visible {
       color: #1d1d1f;
     }
-    [data-theme="light"] #blog-destaque {
+    [data-theme="light"] #blog {
       background:
         radial-gradient(ellipse 65% 55% at 75% 55%, rgba(0,113,227,0.04), transparent 60%),
         var(--section-neutral-bg);
@@ -1675,7 +1675,7 @@
       <li><a href="#sobre"       data-i18n="nav.sobre">Sobre</a></li>
       <li><a href="#experiencia" data-i18n="nav.exp">Experiência</a></li>
       <li><a href="#projetos"    data-i18n="nav.proj">Projetos</a></li>
-      <li><a href="/blog/">Blog</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#contato"     data-i18n="nav.contato">Contato</a></li>
     </ul>
 
@@ -1699,7 +1699,7 @@
     <li><a href="#sobre"       data-i18n="nav.sobre">Sobre</a></li>
     <li><a href="#experiencia" data-i18n="nav.exp">Experiência</a></li>
     <li><a href="#projetos"    data-i18n="nav.proj">Projetos</a></li>
-    <li><a href="/blog/">Blog</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#contato"     data-i18n="nav.contato">Contato</a></li>
   </ul>
 </div>
@@ -1928,7 +1928,7 @@
 </section>
 
 <!-- ── BLOG HIGHLIGHT ────────────────────────────────────────────── -->
-<section id="blog-destaque" class="scroll-section" aria-label="Blog">
+<section id="blog" class="scroll-section" aria-label="Blog">
   <div class="section-inner">
     <p class="section-label reveal" data-i18n="bloghome.label">Blog</p>
     <article class="blog-card reveal stagger-1">
@@ -2375,7 +2375,7 @@ const navObserver = new IntersectionObserver((entries) => {
       const id = e.target.getAttribute('id');
       navLinks.forEach(a => {
         const href = a.getAttribute('href');
-        const isActive = href === `#${id}` || (id === 'blog-destaque' && href === '/blog/');
+        const isActive = href === `#${id}`;
         a.classList.toggle('active', isActive);
         a.toggleAttribute('aria-current', isActive);
       });
