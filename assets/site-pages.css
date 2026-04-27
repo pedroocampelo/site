@@ -1030,6 +1030,10 @@ button {
   z-index: 30;
 }
 
+.sort-menu-panel[hidden] {
+  display: none;
+}
+
 .sort-option {
   width: 100%;
   padding: 12px 14px;
