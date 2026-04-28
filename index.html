@@ -328,8 +328,9 @@
       transition: transform 300ms var(--ease-standard);
       padding: 32px 28px;
       border-left: 1px solid rgba(255,255,255,0.06);
+      pointer-events: none;
     }
-    #mobile-menu.open { transform: translateX(0); }
+    #mobile-menu.open { transform: translateX(0); pointer-events: auto; }
     .mobile-links {
       display: flex;
       flex-direction: column;
@@ -356,8 +357,9 @@
       z-index: 998;
       opacity: 0;
       transition: opacity 300ms ease;
+      pointer-events: none;
     }
-    #mobile-overlay.open { opacity: 1; }
+    #mobile-overlay.open { opacity: 1; pointer-events: auto; }
 
     /* ─── SECTIONS BASE ───────────────────────────────────────────── */
     section { width: 100%; }
@@ -1945,10 +1947,15 @@
             </a>
           </div>
         </div>
-        <a href="/blog/posts/bets-brasil-extracao-renda-risco-dependencia/" class="blog-post-preview" aria-label="Ler último post do blog">
+        <a
+          href="/blog/posts/bets-brasil-extracao-renda-risco-dependencia/"
+          class="blog-post-preview"
+          data-latest-post-card
+          aria-label="Ler último post do blog"
+        >
           <span class="blog-post-tag">Último post</span>
-          <h3 class="blog-post-title">Bets no Brasil: um mercado desenhado para extrair renda, não para enriquecer ninguém</h3>
-          <p class="blog-post-excerpt">Os dados já disponíveis mostram difusão rápida, retorno esperado negativo e dependência de usuários mais intensos.</p>
+          <h3 class="blog-post-title" data-latest-post-title>Bets no Brasil: um mercado desenhado para extrair renda, não para enriquecer ninguém</h3>
+          <p class="blog-post-excerpt" data-latest-post-excerpt>Os dados já disponíveis mostram difusão rápida, retorno esperado negativo e dependência de usuários mais intensos.</p>
           <span class="blog-post-cta">Ler post <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
       </div>
@@ -2246,6 +2253,57 @@ function applyResourceLinks(lang) {
   });
 }
 
+let latestBlogPostData = null;
+
+function renderLatestBlogPost() {
+  const latestPostCard = document.querySelector('[data-latest-post-card]');
+  const latestPostTitle = document.querySelector('[data-latest-post-title]');
+  const latestPostExcerpt = document.querySelector('[data-latest-post-excerpt]');
+
+  if (!latestPostCard || !latestBlogPostData) return;
+
+  latestPostCard.href = latestBlogPostData.pathname;
+  if (latestPostTitle && latestBlogPostData.title) {
+    latestPostTitle.textContent = latestBlogPostData.title;
+  }
+  if (latestPostExcerpt && latestBlogPostData.description) {
+    latestPostExcerpt.textContent = latestBlogPostData.description;
+  }
+
+  const latestAriaPrefix = currentLang === 'en'
+    ? 'Read latest blog post: '
+    : 'Ler último post do blog: ';
+  latestPostCard.setAttribute('aria-label', `${latestAriaPrefix}${latestBlogPostData.title}`);
+}
+
+async function hydrateLatestBlogPost() {
+  try {
+    const response = await fetch('/blog/feed.xml', { credentials: 'same-origin' });
+    if (!response.ok) throw new Error(`feed request failed: ${response.status}`);
+
+    const xmlText = await response.text();
+    const xml = new DOMParser().parseFromString(xmlText, 'application/xml');
+    const items = Array.from(xml.querySelectorAll('item'))
+      .map(item => {
+        const title = item.querySelector('title')?.textContent?.trim() || '';
+        const description = item.querySelector('description')?.textContent?.trim() || '';
+        const absoluteLink = item.querySelector('link')?.textContent?.trim() || '';
+        const pathname = absoluteLink ? new URL(absoluteLink).pathname : '';
+        const publishedAt = Date.parse(item.querySelector('pubDate')?.textContent?.trim() || '');
+
+        return { title, description, pathname, publishedAt };
+      })
+      .filter(item => item.title && item.pathname && !Number.isNaN(item.publishedAt))
+      .sort((a, b) => b.publishedAt - a.publishedAt);
+
+    if (!items.length) return;
+    latestBlogPostData = items[0];
+    renderLatestBlogPost();
+  } catch (error) {
+    console.warn('Não foi possível atualizar o card do último post automaticamente.', error);
+  }
+}
+
 // ─── THEME ───────────────────────────────────────────────────────────
 function setTheme(theme) {
   currentTheme = theme;
@@ -2299,6 +2357,7 @@ function setLanguage(lang) {
   });
 
   applyResourceLinks(lang);
+  renderLatestBlogPost();
 }
 
 document.getElementById('lang-btn').addEventListener('click', () => {
@@ -2307,6 +2366,7 @@ document.getElementById('lang-btn').addEventListener('click', () => {
 
 // Init language
 setLanguage(currentLang);
+hydrateLatestBlogPost();
 
 // ─── MOBILE MENU ─────────────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
