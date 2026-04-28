@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">Quadro comparativo internacional sobre jornada de trabalho e desenvolvimento, incluindo Brasil</title>
+  <desc id="desc">Tabela comparando Brasil, França, Alemanha, Dinamarca, Estados Unidos, Coreia do Sul, Chile e México em jornada padrão, horas anuais efetivas e leitura histórica resumida.</desc>
+  <rect width="1200" height="860" fill="#fcfbf7"/>
+
+  <text x="60" y="80" fill="#14213d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Países ricos trabalham menos horas hoje</text>
+
+  <rect x="60" y="120" width="1080" height="52" rx="10" fill="#14213d"/>
+  <text x="150" y="152" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">País</text>
+  <text x="375" y="152" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Jornada padrão atual</text>
+  <text x="575" y="152" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Horas anuais</text>
+  <text x="900" y="152" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700"> Observações</text>
+
+  <rect x="60" y="182" width="1080" height="84" fill="#fef6e4"/>
+  <rect x="60" y="182" width="7" height="84" fill="#e69f00"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#212529">
+    <text x="150" y="215" text-anchor="middle" font-size="14" font-weight="700">Brasil</text>
+    <text x="150" y="234" text-anchor="middle" font-size="11" fill="#b36b00" font-style="italic">sujeito da reforma</text>
+
+    <text x="375" y="208" text-anchor="middle" font-size="14">44h (CLT);</text>
+    <text x="375" y="228" text-anchor="middle" font-size="14">proposta: 40h</text>
+
+    <text x="575" y="208" text-anchor="middle" font-size="14" font-weight="700">~1.708*</text>
+    <text x="575" y="228" text-anchor="middle" font-size="11" fill="#b36b00">média total</text>
+    <text x="575" y="246" text-anchor="middle" font-size="11" fill="#b36b00">~2.100 (6x1)</text>
+
+    <text x="900" y="205" text-anchor="middle" font-size="14">Média nacional é distorcida pelo setor informal</text>
+    <text x="900" y="223" text-anchor="middle" font-size="14">e pelo subemprego. Trabalhadores CLT em 6x1</text>
+    <text x="900" y="241" text-anchor="middle" font-size="14">(44h/semana) superam 2.100 horas por ano.</text>
+  </g>
+
+  <line x1="60" y1="182" x2="1140" y2="182" stroke="#dfe3e6" stroke-width="1"/>
+  <line x1="60" y1="266" x2="1140" y2="266" stroke="#dfe3e6" stroke-width="1"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#212529">
+
+    <rect x="60" y="266" width="1080" height="64" fill="#ffffff"/>
+    <text x="150" y="303" text-anchor="middle" font-weight="700">França</text>
+    <text x="375" y="292" text-anchor="middle">35h legais;</text>
+    <text x="375" y="312" text-anchor="middle">35,6h negociadas</text>
+    <text x="575" y="303" text-anchor="middle" font-weight="700">1.500</text>
+    <text x="900" y="292" text-anchor="middle">Semana mais curta veio depois do enriquecimento,</text>
+    <text x="900" y="312" text-anchor="middle">com produtividade alta, férias amplas e reformas trabalhistas.</text>
+
+    <rect x="60" y="330" width="1080" height="64" fill="#f5f7f9"/>
+    <text x="150" y="367" text-anchor="middle" font-weight="700">Alemanha</text>
+    <text x="375" y="356" text-anchor="middle">Sem teto legal único;</text>
+    <text x="375" y="376" text-anchor="middle">38,2h negociadas</text>
+    <text x="575" y="367" text-anchor="middle" font-weight="700">1.332</text>
+    <text x="900" y="356" text-anchor="middle">Menos horas com alta produtividade por hora</text>
+    <text x="900" y="376" text-anchor="middle">e forte peso da negociação setorial.</text>
+
+    <rect x="60" y="394" width="1080" height="64" fill="#ffffff"/>
+    <text x="150" y="431" text-anchor="middle" font-weight="700">Dinamarca</text>
+    <text x="375" y="431" text-anchor="middle">37h negociadas</text>
+    <text x="575" y="431" text-anchor="middle" font-weight="700">1.379</text>
+    <text x="900" y="420" text-anchor="middle">Exemplo de semana curta sustentada mais por</text>
+    <text x="900" y="440" text-anchor="middle">produtividade e negociação do que por uma lei única rígida.</text>
+
+    <rect x="60" y="458" width="1080" height="64" fill="#f5f7f9"/>
+    <text x="150" y="495" text-anchor="middle" font-weight="700">Estados Unidos</text>
+    <text x="375" y="495" text-anchor="middle">40h normais</text>
+    <text x="575" y="495" text-anchor="middle" font-weight="700">1.811</text>
+    <text x="900" y="484" text-anchor="middle">Contraexemplo útil: país muito rico que ainda</text>
+    <text x="900" y="504" text-anchor="middle">trabalha mais horas do que boa parte da Europa Ocidental.</text>
+
+    <rect x="60" y="522" width="1080" height="64" fill="#ffffff"/>
+    <text x="150" y="559" text-anchor="middle" font-weight="700">Coreia do Sul</text>
+    <text x="375" y="548" text-anchor="middle">40h normais;</text>
+    <text x="375" y="568" text-anchor="middle">máximo de 52h com extras</text>
+    <text x="575" y="559" text-anchor="middle" font-weight="700">1.901</text>
+    <text x="900" y="548" text-anchor="middle">Ficou rica antes de apertar a jornada de fato.</text>
+    <text x="900" y="568" text-anchor="middle">A redução mais forte veio já em estágio avançado de desenvolvimento.</text>
+
+    <rect x="60" y="586" width="1080" height="64" fill="#f5f7f9"/>
+    <text x="150" y="623" text-anchor="middle" font-weight="700">Chile</text>
+    <text x="375" y="612" text-anchor="middle">42h em 2026;</text>
+    <text x="375" y="632" text-anchor="middle">meta de 40h em 2028</text>
+    <text x="575" y="623" text-anchor="middle" font-weight="700">1.953</text>
+    <text x="900" y="612" text-anchor="middle">Redução gradual depois do enriquecimento relativo,</text>
+    <text x="900" y="632" text-anchor="middle">sem mudança brusca de um ano para o outro.</text>
+
+    <rect x="60" y="650" width="1080" height="64" fill="#ffffff"/>
+    <text x="150" y="687" text-anchor="middle" font-weight="700">México</text>
+    <text x="375" y="676" text-anchor="middle">48h em transição;</text>
+    <text x="375" y="696" text-anchor="middle">40h até 2030</text>
+    <text x="575" y="687" text-anchor="middle" font-weight="700">2.226</text>
+    <text x="900" y="676" text-anchor="middle">A jornada longa persistiu por muito tempo.</text>
+    <text x="900" y="696" text-anchor="middle">A mudança legal veio bem depois do avanço econômico.</text>
+  </g>
+
+  <line x1="60" y1="330" x2="1140" y2="330" stroke="#dfe3e6" stroke-width="1"/>
+  <line x1="60" y1="394" x2="1140" y2="394" stroke="#dfe3e6" stroke-width="1"/>
+  <line x1="60" y1="458" x2="1140" y2="458" stroke="#dfe3e6" stroke-width="1"/>
+  <line x1="60" y1="522" x2="1140" y2="522" stroke="#dfe3e6" stroke-width="1"/>
+  <line x1="60" y1="586" x2="1140" y2="586" stroke="#dfe3e6" stroke-width="1"/>
+  <line x1="60" y1="650" x2="1140" y2="650" stroke="#dfe3e6" stroke-width="1"/>
+  <line x1="60" y1="714" x2="1140" y2="714" stroke="#dfe3e6" stroke-width="1"/>
+
+  <text x="60" y="788" fill="#6c757d" font-family="Arial, Helvetica, sans-serif" font-size="13">*Brasil: horas anuais médias calculadas com base no Penn World Table (2019, via FRED). A média total é puxada para baixo pelo setor informal e pelo subemprego.</text>
+  <text x="60" y="808" fill="#6c757d" font-family="Arial, Helvetica, sans-serif" font-size="13">  Para trabalhadores CLT em escala 6x1 (44h/semana, descontadas 4 semanas de férias), as horas efetivas chegam a aproximadamente 2.112 por ano.</text>
+  <text x="60" y="828" fill="#6c757d" font-family="Arial, Helvetica, sans-serif" font-size="13">**Demais países: horas anuais por bases harmonizadas da OCDE. Jornada padrão: OCDE Employment Outlook 2021 e atualizações oficiais de Chile e México em 2026.</text>
+</svg>
