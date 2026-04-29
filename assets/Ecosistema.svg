@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+  <title id="title">Ecossistema de programas federais que usam o CadÚnico como porta de entrada</title>
+  <desc id="desc">Grade com seis categorias de programas federais que dependem do CadÚnico: transferência de renda, energia, habitação, educação, alimentação e segurança hídrica, e trabalho e agricultura. Inclui programas principais e números de beneficiários onde disponível.</desc>
+
+  <rect width="1200" height="685" fill="#fcfbf7"/>
+
+  <!-- Título -->
+  <text x="60" y="56" fill="#14213d" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">46 programas federais em uma só base</text>
+  <text x="60" y="84" fill="#495057" font-family="Arial, Helvetica, sans-serif" font-size="16">O funciona CadÚnico como porta de entrada para seis grandes áreas da proteção social </text>
+
+  <!-- ============================================================ -->
+  <!-- LINHA 1: Renda | Energia | Habitação -->
+  <!-- ============================================================ -->
+
+  <!-- CARD 1: Transferência de Renda -->
+  <rect x="60" y="110" width="340" height="240" rx="12" fill="#ffffff" stroke="#0072B2" stroke-width="2"/>
+  <rect x="60" y="110" width="340" height="48" rx="12" fill="#0072B2"/>
+  <rect x="60" y="134" width="340" height="24" fill="#0072B2"/>
+  <text x="80" y="142" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">RENDA E TRANSFERÊNCIAS</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#212529">
+    <text x="80" y="182" font-size="14" font-weight="700">Bolsa Família</text>
+    <text x="80" y="200" font-size="13" fill="#495057">18,9 milhões de famílias | R$ 678/mês médio</text>
+    <line x1="80" y1="212" x2="380" y2="212" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="80" y="232" font-size="14" font-weight="700">BPC *</text>
+    <text x="80" y="250" font-size="13" fill="#495057">6,4 milhões de benefícios (idosos e PcD)</text>
+    <line x1="80" y1="262" x2="380" y2="262" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="80" y="282" font-size="14" font-weight="700">Pé-de-Meia</text>
+    <text x="80" y="300" font-size="13" fill="#495057">~4–6 milhões de estudantes do ens. médio</text>
+    <line x1="80" y1="312" x2="380" y2="312" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="80" y="332" font-size="13" fill="#6c757d">+ Auxílio Gás</text>
+  </g>
+
+  <!-- CARD 2: Energia -->
+  <rect x="430" y="110" width="340" height="240" rx="12" fill="#ffffff" stroke="#E69F00" stroke-width="2"/>
+  <rect x="430" y="110" width="340" height="48" rx="12" fill="#E69F00"/>
+  <rect x="430" y="134" width="340" height="24" fill="#E69F00"/>
+  <text x="450" y="142" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">ENERGIA ELÉTRICA</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#212529">
+    <text x="450" y="182" font-size="14" font-weight="700">Tarifa Social de Energia Elétrica</text>
+    <text x="450" y="200" font-size="13" fill="#495057">17,4 milhões de famílias (2024)</text>
+    <text x="450" y="217" font-size="13" fill="#495057">R$ 6,4 bilhões em descontos em 2024</text>
+    <line x1="450" y1="229" x2="750" y2="229" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="450" y="249" font-size="14" font-weight="700">Desconto Social (MP 1.300/2025)</text>
+    <text x="450" y="267" font-size="13" fill="#495057">Gratuidade até 80 kWh/mês para elegíveis</text>
+    <line x1="450" y1="279" x2="750" y2="279" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="450" y="316" font-size="13" fill="#6c757d">~8 milhões de famílias elegíveis ainda</text>
+    <text x="450" y="333" font-size="13" fill="#b36b00">não recebem a tarifa (subregistro estimado)</text>
+  </g>
+
+  <!-- CARD 3: Habitação -->
+  <rect x="800" y="110" width="340" height="240" rx="12" fill="#ffffff" stroke="#7B2D8B" stroke-width="2"/>
+  <rect x="800" y="110" width="340" height="48" rx="12" fill="#7B2D8B"/>
+  <rect x="800" y="134" width="340" height="24" fill="#7B2D8B"/>
+  <text x="820" y="142" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">HABITAÇÃO</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#212529">
+    <text x="820" y="182" font-size="14" font-weight="700">Minha Casa, Minha Vida — Faixa 1</text>
+    <text x="820" y="200" font-size="13" fill="#495057">CadÚnico obrigatório (renda até R$ 2.850/mês)</text>
+    <text x="820" y="217" font-size="13" fill="#495057">50% das unidades reservadas a BF/BPC</text>
+    <line x1="820" y1="229" x2="1120" y2="229" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="820" y="249" font-size="14" font-weight="700">Crédito Fundiário</text>
+    <text x="820" y="267" font-size="13" fill="#495057">Acesso à terra para famílias rurais</text>
+    <line x1="820" y1="279" x2="1120" y2="279" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="820" y="316" font-size="13" fill="#6c757d">Beneficiários do Bolsa Família recebem</text>
+    <text x="820" y="333" font-size="13" fill="#6c757d">a unidade quitada (sem parcelas)</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LINHA 2: Educação | Alimentação | Trabalho e Agricultura -->
+  <!-- ============================================================ -->
+
+  <!-- CARD 4: Educação -->
+  <rect x="60" y="375" width="340" height="240" rx="12" fill="#ffffff" stroke="#009E73" stroke-width="2"/>
+  <rect x="60" y="375" width="340" height="48" rx="12" fill="#009E73"/>
+  <rect x="60" y="399" width="340" height="24" fill="#009E73"/>
+  <text x="80" y="407" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">EDUCAÇÃO</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#212529">
+    <text x="80" y="447" font-size="14" font-weight="700">ProUni</text>
+    <text x="80" y="465" font-size="13" fill="#495057">Bolsas integrais/parciais no ensino superior</text>
+    <line x1="80" y1="477" x2="380" y2="477" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="80" y="497" font-size="14" font-weight="700">FIES (baixa renda)</text>
+    <text x="80" y="515" font-size="13" fill="#495057">Financiamento estudantil com critério CadÚnico</text>
+    <line x1="80" y1="527" x2="380" y2="527" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="80" y="547" font-size="14" font-weight="700">Novo PRONATEC</text>
+    <text x="80" y="565" font-size="13" fill="#495057">Qualificação profissional gratuita</text>
+    <line x1="80" y1="577" x2="380" y2="577" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="80" y="597" font-size="13" fill="#6c757d">+ Pé-de-Meia (listado também em Renda)</text>
+  </g>
+
+  <!-- CARD 5: Alimentação e Segurança Hídrica -->
+  <rect x="430" y="375" width="340" height="240" rx="12" fill="#ffffff" stroke="#56B4E9" stroke-width="2"/>
+  <rect x="430" y="375" width="340" height="48" rx="12" fill="#56B4E9"/>
+  <rect x="430" y="399" width="340" height="24" fill="#56B4E9"/>
+  <text x="450" y="407" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">ALIMENTAÇÃO E SEGURANÇA HÍDRICA</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#212529">
+    <text x="450" y="447" font-size="14" font-weight="700">Cestas de Alimentos</text>
+    <text x="450" y="465" font-size="13" fill="#495057">Cestas de alimento gratuitas</text>
+    <line x1="450" y1="477" x2="750" y2="477" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="450" y="497" font-size="14" font-weight="700">Programa de Cisternas</text>
+    <text x="450" y="515" font-size="13" fill="#495057">Acesso à água no semiárido</text>
+    <line x1="450" y1="527" x2="750" y2="527" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="450" y="547" font-size="14" font-weight="700">PAA</text>
+    <text x="450" y="565" font-size="13" fill="#495057">Compra de alimentos da agricultura familiar</text>
+    <line x1="450" y1="577" x2="750" y2="577" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="450" y="597" font-size="13" fill="#6c757d">+ Banco de Alimentos, Cozinha Solidária</text>
+  </g>
+
+  <!-- CARD 6: Trabalho e Agricultura -->
+  <rect x="800" y="375" width="340" height="240" rx="12" fill="#ffffff" stroke="#D55E00" stroke-width="2"/>
+  <rect x="800" y="375" width="340" height="48" rx="12" fill="#D55E00"/>
+  <rect x="800" y="399" width="340" height="24" fill="#D55E00"/>
+  <text x="820" y="407" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">TRABALHO E AGRICULTURA FAMILIAR</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#212529">
+    <text x="820" y="447" font-size="14" font-weight="700">PRONAF (Baixa Renda)</text>
+    <text x="820" y="465" font-size="13" fill="#495057">Crédito rural para agricultores familiares</text>
+    <line x1="820" y1="477" x2="1120" y2="477" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="820" y="497" font-size="14" font-weight="700">Microcrédito Produtivo (PNMPO)</text>
+    <text x="820" y="515" font-size="13" fill="#495057">Crédito para empreendedores de baixa renda</text>
+    <line x1="820" y1="527" x2="1120" y2="527" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="820" y="547" font-size="14" font-weight="700">Fomento Atividades Produtivas Rurais</text>
+    <text x="820" y="565" font-size="13" fill="#495057">Apoio a famílias rurais em extrema pobreza</text>
+    <line x1="820" y1="577" x2="1120" y2="577" stroke="#e9ecef" stroke-width="1"/>
+
+    <text x="820" y="597" font-size="13" fill="#6c757d">+ Seguro-Desemprego (verificação cruzada)</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- Rodapé -->
+  <!-- ============================================================ -->
+  <text x="60" y="650" fill="#6c757d" font-family="Arial, Helvetica, sans-serif" font-size="12">* O BPC usa o CadÚnico para busca ativa e cruzamento de dados, não como porta de entrada exclusiva. A elegibilidade é definida por critério de renda + avaliação médica e social.</text>
+</svg>
