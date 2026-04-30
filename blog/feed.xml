@@ -1,11 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
     <title>Pedro Campelo Blog</title>
     <link>https://portfolio.pedro-campelo.workers.dev/blog/</link>
     <description>Posts sobre avaliação de impacto, consultoria, microeconomia aplicada e políticas públicas.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 26 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>O Brasil vai contar suas pessoas em situação de rua pela primeira vez</title>
+      <link>https://site.pedro-campelo.workers.dev/blog/posts/censo-populacao-situacao-de-rua/</link>
+      <guid>https://site.pedro-campelo.workers.dev/blog/posts/censo-populacao-situacao-de-rua/</guid>
+      <pubDate>Thu, 30 Apr 2026 12:00:00 GMT</pubDate>
+      <description>O IBGE anunciou o 1º Censo Nacional, mas os dados só chegam em 2028. Até lá, viveremos de estimativas incompletas</description>
+    </item>
     <item>
       <title>A escala 6x1 deveria acabar.</title>
       <link>https://portfolio.pedro-campelo.workers.dev/blog/posts/fim-escala-6x1-brasil-reforma-jornada-transicao/</link>
