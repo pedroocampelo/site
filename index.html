@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
@@ -20,7 +20,6 @@
   <meta name="twitter:description" content="Pesquisa, consultoria e análise aplicada para problemas concretos no setor público e em políticas baseadas em evidência." />
   <meta name="twitter:image" content="https://portfolio.pedro-campelo.workers.dev/assets/og-home.svg" />
   <link rel="canonical" href="https://portfolio.pedro-campelo.workers.dev/" />
-  <link rel="alternate" type="application/rss+xml" title="Pedro Campelo Blog" href="https://portfolio.pedro-campelo.workers.dev/blog/feed.xml" />
   <link rel="icon" type="image/png" href="/pclogo.png?v=2" />
   <link rel="shortcut icon" href="/pclogo.png?v=2" />
   <link rel="apple-touch-icon" href="/pclogo.png?v=2" />
@@ -756,113 +755,6 @@
       transform: translateY(-3px);
       box-shadow: var(--shadow-card-hover);
     }
-    #blog {
-      background:
-        radial-gradient(ellipse 65% 55% at 75% 55%, rgba(41,151,255,0.07), transparent 60%),
-        var(--bg-hero);
-      padding: 100px 0;
-    }
-    .blog-card {
-      background: var(--bg-card-dark);
-      border: 1px solid var(--border-dark);
-      border-radius: var(--radius-lg);
-      padding: clamp(28px, 4vw, 44px);
-      box-shadow: var(--shadow-card);
-      position: relative;
-      overflow: hidden;
-    }
-    .blog-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: linear-gradient(135deg, rgba(41,151,255,0.09) 0%, transparent 52%);
-      pointer-events: none;
-    }
-    .blog-card-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-      position: relative;
-      z-index: 1;
-    }
-    .blog-card-intro {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .blog-card .section-heading {
-      margin-bottom: 0;
-    }
-    .blog-copy {
-      font-size: 16px;
-      line-height: 1.72;
-      letter-spacing: -0.012em;
-      color: var(--text-sec-dark);
-    }
-    .blog-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .blog-post-preview {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 22px 24px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-md);
-      text-decoration: none;
-      color: inherit;
-      transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
-      align-self: stretch;
-    }
-    .blog-post-preview:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(41,151,255,0.3);
-      transform: translateY(-2px);
-    }
-    .blog-post-tag {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--apple-blue-dark);
-    }
-    .blog-post-title {
-      font-family: var(--font-serif);
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1.22;
-      letter-spacing: -0.022em;
-      color: #fff;
-      margin: 0;
-    }
-    .blog-post-excerpt {
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--text-sec-dark);
-      flex: 1;
-      margin: 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .blog-post-cta {
-      font-size: 13px;
-      color: var(--apple-blue-dark);
-      margin-top: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: gap 180ms ease;
-    }
-    .blog-post-preview:hover .blog-post-cta {
-      gap: 7px;
-    }
     .project-card-meta {
       display: flex;
       align-items: center;
@@ -1592,38 +1484,6 @@
     [data-theme="light"] .footer-links a:focus-visible {
       color: #1d1d1f;
     }
-    [data-theme="light"] #blog {
-      background:
-        radial-gradient(ellipse 65% 55% at 75% 55%, rgba(0,113,227,0.04), transparent 60%),
-        var(--section-neutral-bg);
-    }
-    [data-theme="light"] .blog-card {
-      background: var(--card-bg);
-      border-color: var(--card-border);
-    }
-    [data-theme="light"] .blog-card::before {
-      background: linear-gradient(135deg, rgba(0,113,227,0.05) 0%, transparent 52%);
-    }
-    [data-theme="light"] .blog-card .section-heading {
-      color: #1d1d1f;
-    }
-    [data-theme="light"] .blog-copy {
-      color: var(--text-muted);
-    }
-    [data-theme="light"] .blog-post-preview {
-      background: rgba(0,0,0,0.03);
-      border-color: rgba(0,0,0,0.1);
-    }
-    [data-theme="light"] .blog-post-preview:hover {
-      background: rgba(0,113,227,0.04);
-      border-color: rgba(0,113,227,0.22);
-    }
-    [data-theme="light"] .blog-post-title {
-      color: #1d1d1f;
-    }
-    [data-theme="light"] .blog-post-excerpt {
-      color: rgba(0,0,0,0.64);
-    }
 
     /* ─── RESPONSIVE ──────────────────────────────────────────────── */
     @media (max-width: 768px) {
@@ -1644,7 +1504,6 @@
       }
       .contact-btns { flex-direction: column; align-items: center; }
       .contact-btn { width: 100%; max-width: 300px; justify-content: center; }
-      .blog-card-body { grid-template-columns: 1fr; gap: 24px; }
     }
     @media (min-width: 769px) and (max-width: 1024px) {
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1677,7 +1536,6 @@
       <li><a href="#sobre"       data-i18n="nav.sobre">Sobre</a></li>
       <li><a href="#experiencia" data-i18n="nav.exp">Experiência</a></li>
       <li><a href="#projetos"    data-i18n="nav.proj">Projetos</a></li>
-      <li><a href="#blog">Blog</a></li>
       <li><a href="#contato"     data-i18n="nav.contato">Contato</a></li>
     </ul>
 
@@ -1701,7 +1559,6 @@
     <li><a href="#sobre"       data-i18n="nav.sobre">Sobre</a></li>
     <li><a href="#experiencia" data-i18n="nav.exp">Experiência</a></li>
     <li><a href="#projetos"    data-i18n="nav.proj">Projetos</a></li>
-    <li><a href="#blog">Blog</a></li>
     <li><a href="#contato"     data-i18n="nav.contato">Contato</a></li>
   </ul>
 </div>
@@ -1929,40 +1786,6 @@
   </div>
 </section>
 
-<!-- ── BLOG HIGHLIGHT ────────────────────────────────────────────── -->
-<section id="blog" class="scroll-section" aria-label="Blog">
-  <div class="section-inner">
-    <p class="section-label reveal" data-i18n="bloghome.label">Blog</p>
-    <article class="blog-card reveal stagger-1">
-      <div class="blog-card-body">
-        <div class="blog-card-intro">
-          <h2 class="section-heading" data-i18n="bloghome.heading">Tentando entender melhor as coisas, não só dar pitaco.</h2>
-          <p class="blog-copy" data-i18n="bloghome.copy">
-            Os temas são avaliação de impacto, consultoria, microeconomia aplicada e políticas públicas, mas o fio comum é olhar para os dados, e não só para o argumento bem escrito.
-          </p>
-          <div class="blog-actions">
-            <a href="/blog/" class="btn-primary" data-i18n="bloghome.cta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              Ler posts
-            </a>
-          </div>
-        </div>
-        <a
-          href="/blog/posts/bets-brasil-extracao-renda-risco-dependencia/"
-          class="blog-post-preview"
-          data-latest-post-card
-          aria-label="Ler último post do blog"
-        >
-          <span class="blog-post-tag">Último post</span>
-          <h3 class="blog-post-title" data-latest-post-title>Bets no Brasil: um mercado desenhado para extrair renda, não para enriquecer ninguém</h3>
-          <p class="blog-post-excerpt" data-latest-post-excerpt>Os dados já disponíveis mostram difusão rápida, retorno esperado negativo e dependência de usuários mais intensos.</p>
-          <span class="blog-post-cta">Ler post <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-      </div>
-    </article>
-  </div>
-</section>
-
 <!-- ── CONTACT ────────────────────────────────────────────────────── -->
 <section id="contato" class="scroll-section" aria-label="Contato">
   <div class="section-inner">
@@ -2085,11 +1908,6 @@ const T = {
     'proj3.meta': 'Relatório · Confidencial',
     'proj3.desc': 'Diagnóstico organizacional e redesenho de processos internos, com propostas práticas para aumentar eficiência, engajamento dos membros e impacto organizacional em entidade do setor público.',
 
-    'bloghome.label': 'Blog',
-    'bloghome.heading': 'Tentando entender melhor as coisas, não só dar pitaco.',
-    'bloghome.copy': 'Os temas são avaliação de impacto, consultoria, microeconomia aplicada e políticas públicas, mas o fio comum é olhar para os dados, e não só para o argumento bem escrito.',
-    'bloghome.cta': 'Ler posts',
-
     'status.soon': 'Em breve',
     'status.nda': 'Sob NDA',
 
@@ -2180,11 +1998,6 @@ const T = {
     'proj3.meta': 'Report · Confidential',
     'proj3.desc': 'Organizational diagnosis and internal process redesign, with practical proposals to increase efficiency, member engagement, and organizational impact in a public sector entity.',
 
-    'bloghome.label': 'Blog',
-    'bloghome.heading': 'Trying to understand things better, not just throw out opinions.',
-    'bloghome.copy': 'The topics include impact evaluation, consulting, applied microeconomics, and public policy, but the common thread is looking at the data, not just at well-crafted arguments.',
-    'bloghome.cta': 'Read posts',
-
     'status.soon': 'Coming Soon',
     'status.nda': 'Under NDA',
 
@@ -2253,57 +2066,6 @@ function applyResourceLinks(lang) {
   });
 }
 
-let latestBlogPostData = null;
-
-function renderLatestBlogPost() {
-  const latestPostCard = document.querySelector('[data-latest-post-card]');
-  const latestPostTitle = document.querySelector('[data-latest-post-title]');
-  const latestPostExcerpt = document.querySelector('[data-latest-post-excerpt]');
-
-  if (!latestPostCard || !latestBlogPostData) return;
-
-  latestPostCard.href = latestBlogPostData.pathname;
-  if (latestPostTitle && latestBlogPostData.title) {
-    latestPostTitle.textContent = latestBlogPostData.title;
-  }
-  if (latestPostExcerpt && latestBlogPostData.description) {
-    latestPostExcerpt.textContent = latestBlogPostData.description;
-  }
-
-  const latestAriaPrefix = currentLang === 'en'
-    ? 'Read latest blog post: '
-    : 'Ler último post do blog: ';
-  latestPostCard.setAttribute('aria-label', `${latestAriaPrefix}${latestBlogPostData.title}`);
-}
-
-async function hydrateLatestBlogPost() {
-  try {
-    const response = await fetch('/blog/feed.xml', { credentials: 'same-origin' });
-    if (!response.ok) throw new Error(`feed request failed: ${response.status}`);
-
-    const xmlText = await response.text();
-    const xml = new DOMParser().parseFromString(xmlText, 'application/xml');
-    const items = Array.from(xml.querySelectorAll('item'))
-      .map(item => {
-        const title = item.querySelector('title')?.textContent?.trim() || '';
-        const description = item.querySelector('description')?.textContent?.trim() || '';
-        const absoluteLink = item.querySelector('link')?.textContent?.trim() || '';
-        const pathname = absoluteLink ? new URL(absoluteLink).pathname : '';
-        const publishedAt = Date.parse(item.querySelector('pubDate')?.textContent?.trim() || '');
-
-        return { title, description, pathname, publishedAt };
-      })
-      .filter(item => item.title && item.pathname && !Number.isNaN(item.publishedAt))
-      .sort((a, b) => b.publishedAt - a.publishedAt);
-
-    if (!items.length) return;
-    latestBlogPostData = items[0];
-    renderLatestBlogPost();
-  } catch (error) {
-    console.warn('Não foi possível atualizar o card do último post automaticamente.', error);
-  }
-}
-
 // ─── THEME ───────────────────────────────────────────────────────────
 function setTheme(theme) {
   currentTheme = theme;
@@ -2357,7 +2119,6 @@ function setLanguage(lang) {
   });
 
   applyResourceLinks(lang);
-  renderLatestBlogPost();
 }
 
 document.getElementById('lang-btn').addEventListener('click', () => {
@@ -2366,7 +2127,6 @@ document.getElementById('lang-btn').addEventListener('click', () => {
 
 // Init language
 setLanguage(currentLang);
-hydrateLatestBlogPost();
 
 // ─── MOBILE MENU ─────────────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');

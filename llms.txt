@@ -1,20 +1,15 @@
 # Pedro Campelo
 
-> Portfólio e blog sobre economia aplicada, avaliação de impacto, consultoria e políticas públicas.
+> Portfólio sobre economia aplicada, avaliação de impacto, consultoria e políticas públicas.
 
 ## Páginas principais
 
 - Home: https://portfolio.pedro-campelo.workers.dev/
 - Sobre: https://portfolio.pedro-campelo.workers.dev/about/
 - Contato: https://portfolio.pedro-campelo.workers.dev/contact/
-- Blog: https://portfolio.pedro-campelo.workers.dev/blog/
 
-## Posts
-
-- O que faz uma estratégia empírica convencer de verdade?: https://portfolio.pedro-campelo.workers.dev/blog/posts/estrategia-empirica/
 
 ## Observações
 
 - Site estático servido via Cloudflare Workers Static Assets.
 - Conteúdo autoral de Pedro Campelo.
-- Feed RSS disponível em https://portfolio.pedro-campelo.workers.dev/blog/feed.xml
