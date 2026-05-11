@@ -215,38 +215,6 @@ button {
   width: 100%;
 }
 
-.hero--blog-index {
-  padding: 36px 0 6px;
-}
-
-.hero--blog-index .container {
-  width: min(720px, calc(100% - 44px));
-}
-
-.hero--blog-index .hero-title {
-  font-size: clamp(26px, 3.2vw, 44px);
-  line-height: 1;
-}
-
-.hero--blog-index .hero-subtitle {
-  max-width: 50ch;
-  margin-top: 14px;
-  font-size: clamp(14px, 1.3vw, 17px);
-  line-height: 1.6;
-}
-
-.hero--blog-index .hero-actions {
-  margin-top: 18px;
-}
-
-.section--blog-index-posts .container {
-  width: min(1040px, calc(100% - 44px));
-}
-
-.section--blog-index-posts {
-  padding-top: 12px;
-  padding-bottom: 48px;
-}
 
 .container {
   width: min(var(--maxw), calc(100% - 44px));
